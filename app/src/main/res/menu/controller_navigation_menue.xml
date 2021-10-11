@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_controller_account"
+        android:title="پروفایل" />
+
+    <item
+        android:id="@+id/nav_controller_newClass"
+        android:title="کلاس جدید" />
+
+    <item
+        android:id="@+id/nav_controller_logout"
+        android:title="خروج" />
+
+    <item
+        android:id="@+id/nav_controller_contact"
+        android:title="ارتباط با ما" />
+</menu>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view_class">
+
+    <ScrollView
+        android:layout_width="407dp"
+        android:layout_height="727dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="50dp"
+                    android:textSize="17dp"
+                    android:text="@string/class_id"></TextView>
+
+                <TextView
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"></TextView>
+                <TextView
+                    android:id="@+id/class_id_info"
+                    android:layout_width="320dp"
+                    android:layout_height="50dp"></TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:textSize="17dp"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="50dp"
+                    android:textSize="17dp"
+                    android:text="@string/class_title"></TextView>
+                <TextView
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"></TextView>
+
+                <TextView
+                    android:id="@+id/class_title_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="17dp"></TextView>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="50dp"
+                    android:textSize="17dp"
+                    android:text="@string/place"></TextView>
+
+
+                <TextView
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"></TextView>
+                <TextView
+                    android:id="@+id/class_place_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="17dp"></TextView>
+            </LinearLayout>
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="17dp"
+                android:text="ساعت"></TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:orientation="horizontal"
+                android:textSize="17dp">
+
+                <TextView
+                    android:id="@+id/class_stime_info"
+                    android:layout_width="185dp"
+                    android:layout_height="40dp"
+                    android:textSize="17dp"></TextView>
+
+                <TextView
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:text=" to"
+                    android:textSize="17dp"></TextView>
+
+                <TextView
+                    android:id="@+id/class_etime_info"
+                    android:layout_width="185dp"
+                    android:layout_height="40dp"
+                    android:textSize="17dp"></TextView>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="17dp"
+                android:text="تاریخ"></TextView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/class_sdate_info"
+                    android:layout_width="185dp"
+                    android:layout_height="40dp"
+                    android:textSize="17dp"></TextView>
+
+                <TextView
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:text=" to"
+                    android:textSize="17dp"></TextView>
+
+                <TextView
+                    android:id="@+id/class_edate_info"
+                    android:layout_width="185dp"
+                    android:layout_height="40dp"
+                    android:textSize="17dp"></TextView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

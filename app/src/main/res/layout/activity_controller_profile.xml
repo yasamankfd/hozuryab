@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Controller_profile">
+
+  <EditText
+      android:id="@+id/controller_profile_uname"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:ems="10"
+      android:inputType="textPersonName"
+      android:text=""
+      android:hint=""
+      app:layout_constraintBottom_toTopOf="@+id/controller_profile_name"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.502"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/controller_profilepic" />
+
+  <EditText
+      android:id="@+id/controller_profile_name"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:ems="10"
+      android:inputType="textPersonName"
+      android:text=""
+      app:layout_constraintBottom_toTopOf="@+id/controller_profile_lname"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.5"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/controller_profile_uname" />
+
+  <EditText
+      android:id="@+id/controller_profile_email"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:ems="10"
+      android:inputType="textPersonName"
+      android:text=""
+      app:layout_constraintBottom_toTopOf="@+id/controller_profile_edit"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.5"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/controller_profile_lname" />
+
+  <EditText
+      android:id="@+id/controller_profile_lname"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:ems="10"
+      android:inputType="textPersonName"
+      android:text=""
+      android:hint=""
+      app:layout_constraintBottom_toTopOf="@+id/controller_profile_email"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.5"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/controller_profile_name" />
+
+  <Button
+      android:id="@+id/controller_profile_edit"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/edit"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.5"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/controller_profile_email" />
+
+  <ImageView
+      android:id="@+id/controller_profilepic"
+      android:layout_width="156dp"
+      android:layout_height="149dp"
+      app:layout_constraintBottom_toTopOf="@+id/controller_profile_uname"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.5"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

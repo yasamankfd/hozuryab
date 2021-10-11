@@ -1,5 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/layout/activity_account.xml" value="0.12318840579710146" />
+        <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/layout/activity_attendee_account.xml" value="0.1" />
+        <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/layout/activity_attendee_profile.xml" value="0.45323741007194246" />
+        <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/layout/activity_attendee_signup.xml" value="0.22" />
+        <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/layout/activity_controller_account.xml" value="0.24739583333333334" />
+        <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/layout/activity_controller_profile.xml" value="0.22" />
+        <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/layout/activity_controller_signup.xml" value="0.22" />
+        <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/layout/activity_main.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/layout/activity_new_class.xml" value="0.23854166666666668" />
+        <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/layout/activity_view_class.xml" value="0.5301455301455301" />
+        <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/layout/app_bar_controller_account.xml" value="0.11145833333333334" />
+        <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/layout/attendee_grid.xml" value="0.1265625" />
+        <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/layout/content_controller_account.xml" value="0.1" />
+        <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/layout/controller_account.xml" value="0.1" />
+        <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/layout/controller_grid.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/layout/fragment_contact.xml" value="0.15625" />
+        <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/layout/fragment_gallery.xml" value="0.11145833333333334" />
+        <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/layout/fragment_newclass.xml" value="0.15625" />
+        <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/layout/fragment_profile.xml" value="0.15625" />
+        <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/layout/nav_header_controller_account.xml" value="0.1" />
+        <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/layout/new_class.xml" value="0.1" />
+        <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/menu/activity_main_drawer.xml" value="0.1" />
+        <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/menu/attendee_account.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/menu/attendee_navigation_menue.xml" value="0.23854166666666668" />
+        <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/menu/controller_account.xml" value="0.1" />
+        <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/menu/controller_navigation_menue.xml" value="0.1" />
+        <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/menu/navigation_menue.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
