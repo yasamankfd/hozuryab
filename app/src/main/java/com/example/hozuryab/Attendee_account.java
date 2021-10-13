@@ -7,23 +7,36 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import com.google.android.material.navigation.NavigationView;
 
+import java.io.BufferedReader;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.util.concurrent.ExecutionException;
 
 public class Attendee_account extends AppCompatActivity {
     Context ctx = this;
     String user;
     GridView grid;
+    String get_classes = "http://194.5.195.193/attendee_load_classes.php";
+
     public DrawerLayout drawerLayout;
     public ActionBarDrawerToggle actionBarDrawerToggle;
-    String[] titles = {"class1","class2","class3","class4","class5","class6"} , ids = { "111","222","333","444","555","666"};
+    String[] titles, ids;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,32 +61,72 @@ public class Attendee_account extends AppCompatActivity {
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
 
-        grid = findViewById(R.id.attendee_classes);
-        Atten_grid_adapter atten_grid_adapter = new Atten_grid_adapter(ctx,titles,ids);
-        grid.setAdapter(atten_grid_adapter);
+
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId())
-                {
-                    case R.id.nav_attendee_account:
-                        Intent i = new Intent(ctx,Attendee_profile.class);
-                        startActivity(i);
-                        return true;
-                    case R.id.nav_attendee_contact:
-                        return true;
+        Get_classes getClasses = new Get_classes(user);
+        getClasses.execute();
+        String classdata = "";
+        try{
+            classdata = getClasses.get().toString();
+            System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5  "+classdata);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
 
-                    case R.id.nav_attendee_logout:
-                        Intent intent = new Intent(ctx,MainActivity.class);
-                        startActivity(intent);
-                        return true;
-                }
-                return false;
+        String[] raw_class_data = classdata.split("-");
+        int len = raw_class_data.length/5,i=3,j=5;
+        String rawId = "",rawTitle = "";
+        for(int k =0 ; k<len ; k++)
+        {
+            rawId+=raw_class_data[i]+"-";
+            i+=5;
+            rawTitle+=raw_class_data[j]+"-";
+            j+=5;
+        }
+        ids = rawId.split("-");
+        titles = rawTitle.split("-");
+        grid = findViewById(R.id.attendee_classes);
+        Con_grid_adapter con_grid_adapter = new Con_grid_adapter(Attendee_account.this,titles,ids);
+        grid.setAdapter(con_grid_adapter);
+
+        navigationView.setNavigationItemSelectedListener(item -> {
+            switch (item.getItemId())
+            {
+                case R.id.nav_attendee_account:
+                    Intent i1 = new Intent(ctx,Attendee_profile.class);
+                    startActivity(i1);
+                    return true;
+                case R.id.nav_attendee_contact:
+                    return true;
+
+                case R.id.nav_attendee_logout:
+                    Intent intent = new Intent(ctx,MainActivity.class);
+                    startActivity(intent);
+                    return true;
+            }
+            return false;
+        });
+
+        grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                String id = ids[i];
+
+
+                Intent intent = new Intent(Attendee_account.this, view_class.class);
+                intent.putExtra("id",id);
+                startActivity(intent);
+
             }
         });
+
+
+
     }
 
     @Override
@@ -84,6 +137,48 @@ public class Attendee_account extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
 
+    }
+
+    class Get_classes extends AsyncTask {
+        String attendee_id;
+        String res = "nothing";
+
+        public Get_classes(String attendee_id)
+        {
+            this.attendee_id = attendee_id;
+        }
+        @Override
+        protected Object doInBackground(Object[] objects) {
+            try {
+
+                String data = "id=" + URLEncoder.encode(attendee_id, "UTF-8");
+                URL url = new URL(get_classes);
+
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.setRequestMethod("POST");
+                conn.setDoOutput(true);
+                conn.setDoInput(true);
+                OutputStreamWriter outstream = new OutputStreamWriter(conn.getOutputStream());
+
+                outstream.write(data);
+                outstream.flush();
+
+                BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+
+                StringBuilder sb = new StringBuilder();
+                String line ;
+
+                while ((line = reader.readLine()) != null) {
+                    sb.append(line + "\n");
+                }
+                res = sb.toString();
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return res;
+        }
     }
 
 

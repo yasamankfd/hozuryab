@@ -108,9 +108,9 @@ public class Controller_account extends AppCompatActivity {
         }
 
         String[] raw_class_data = classdata.split("-");
-        int len = classdata.length() , i=3,j=5;
+        int len = raw_class_data.length/5, i=3,j=5;
         String rawId = "",rawTitle = "";
-        for(int k =0 ; k<3 ; k++)
+        for(int k =0 ; k<len ; k++)
         {
             rawId+=raw_class_data[i]+"-";
             i+=5;

@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Hozuryab"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".attendee_view_class"
+            android:exported="false" />
+        <activity
             android:name=".view_class"
             android:exported="true" />
         <activity
