@@ -2,8 +2,11 @@ package com.example.hozuryab;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
@@ -19,6 +22,7 @@ public class view_class extends AppCompatActivity {
 
     String GET_CLASS = "http://194.5.195.193/load_class.php";
     TextView id , title , st , et , sd,ed ,place;
+    Button new_session , attendees_list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +38,20 @@ public class view_class extends AppCompatActivity {
         et = findViewById(R.id.class_etime_info);
         sd = findViewById(R.id.class_sdate_info);
         ed = findViewById(R.id.class_edate_info);
+        new_session = findViewById(R.id.new_session);
+        attendees_list = findViewById(R.id.attendees_list);
+
+        attendees_list.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(view_class.this,View_attendees_for_controller.class);
+                i.putExtra("classid",Id);
+                i.putExtra("classtitle",title.getText().toString());
+                startActivity(i);
+
+            }
+        });
+
 
         get_class getClass = new get_class(Id);
         getClass.execute();

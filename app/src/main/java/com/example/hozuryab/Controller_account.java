@@ -128,8 +128,6 @@ public class Controller_account extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                 String id = ids[i];
-
-
                 Intent intent = new Intent(Controller_account.this, view_class.class);
                 intent.putExtra("id",id);
                 startActivity(intent);
