@@ -92,6 +92,8 @@ public class Attendee_account extends AppCompatActivity {
         grid = findViewById(R.id.attendee_classes);
         Con_grid_adapter con_grid_adapter = new Con_grid_adapter(Attendee_account.this,titles,ids);
         grid.setAdapter(con_grid_adapter);
+        grid.setNumColumns(1);
+        grid.setHorizontalSpacing(1);
 
         navigationView.setNavigationItemSelectedListener(item -> {
             switch (item.getItemId())

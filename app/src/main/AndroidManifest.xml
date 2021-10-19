@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Hozuryab"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".New_session"
+            android:exported="false" />
+        <activity
             android:name=".View_attendees_for_controller"
             android:exported="false" />
         <activity

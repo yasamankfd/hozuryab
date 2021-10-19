@@ -14,6 +14,7 @@
     <string name="choose">انتخاب</string>
     <string name="attendee">شرکت کننده</string>
     <string name="controller">مسئول</string>
+    <string name="year">سال</string>
     <string name="title_activity_controller_account">Controller_account</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -33,4 +34,5 @@
     <string name="place">مکان</string>
     <string name="class_id">شناسه کلاس</string>
     <string name="class_title">عنوان کلاس</string>
+    <string name="space"> </string>
 </resources>

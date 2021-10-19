@@ -32,21 +32,36 @@ public class View_attendees_for_controller extends AppCompatActivity {
         classid = findViewById(R.id.class_id_in_attendee_list);
         classtitle = findViewById(R.id.class_title_in_attendee_list);
         gridView = findViewById(R.id.attendees_list);
-        classid.setText(classId);
-        classtitle.setText(classTitle);
+        classid.setText   ("class ID :    "+classId);
+        classtitle.setText("class title : "+classTitle);
 
         get_attendees getAttendees = new get_attendees(classId);
         getAttendees.execute();
-        String res = "nothing";
+        String result = "nothing";
         try{
-            res = getAttendees.get().toString();
-
-
+            result = getAttendees.get().toString();
         }catch (Exception e)
         {
             e.printStackTrace();
         }
-        System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  "+res);
+        System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  "+result);
+        String[] raw_attendees_data = result.split("-");
+        int length = raw_attendees_data.length , len = length/5,i= 2, j = 4;
+        String rawId = "",rawName = "";
+        for(int k =0 ; k<len ; k++)
+        {
+            rawId+=raw_attendees_data[i]+"-";
+            i+=5;
+            rawName+=raw_attendees_data[j]+"-";
+            j+=5;
+        }
+        String[] ids = rawId.split("-") , names = rawName.split("-");
+        Attendee_list_grid_adapter attendee_list_grid_adapter = new Attendee_list_grid_adapter(View_attendees_for_controller.this,names,ids);
+        gridView.setAdapter(attendee_list_grid_adapter);
+        gridView.setNumColumns(1);
+        gridView.setHorizontalSpacing(5);
+
+
 
 
     }
@@ -79,10 +94,12 @@ public class View_attendees_for_controller extends AppCompatActivity {
                 StringBuilder sb = new StringBuilder();
                 String line ;
 
+
                 while ((line = reader.readLine()) != null) {
                     sb.append(line + "\n");
                 }
                 res = sb.toString();
+                System.out.println("oooooooooooooooooooooooooooooooooo "+res);
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             } catch (IOException e) {

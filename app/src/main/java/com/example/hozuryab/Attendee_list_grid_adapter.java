@@ -7,21 +7,20 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-public class Con_grid_adapter extends BaseAdapter {
+public class Attendee_list_grid_adapter extends BaseAdapter {
     Context ctx ;
-    String[] titles;
-    String[] IDs;
-
+    String[] names , ids;
     LayoutInflater layoutInflater;
-    public Con_grid_adapter(Context ctx, String[] titles, String[] IDs) {
+
+    public Attendee_list_grid_adapter(Context ctx, String[] names,String[] ids) {
         this.ctx = ctx;
-        this.titles = titles;
-        this.IDs = IDs;
+        this.names = names;
+        this.ids = ids;
     }
 
     @Override
     public int getCount() {
-        return titles.length;
+        return names.length;
     }
 
     @Override
@@ -42,13 +41,15 @@ public class Con_grid_adapter extends BaseAdapter {
         }
         if(view == null)
         {
-            view = layoutInflater.inflate(R.layout.controller_grid,null);
+            view = layoutInflater.inflate(R.layout.attendees_list_grid,null);
         }
-        TextView title , id;
-        title = view.findViewById(R.id.class_title);
-        id = view.findViewById(R.id.class_id);
-        title.setText(titles[i]);
-        id.setText(IDs[i]);
+        TextView name,id;
+        name = view.findViewById(R.id.attendee_name_in_list);
+        id = view.findViewById(R.id.attendee_id_in_list);
+        name.setText(names[i]);
+        id.setText(ids[i]);
+
+
         return view;
     }
 }

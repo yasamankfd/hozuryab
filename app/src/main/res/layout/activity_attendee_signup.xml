@@ -9,13 +9,14 @@
     <Spinner
         android:id="@+id/ayear"
         android:layout_width="98dp"
-        android:layout_height="43dp"
+        android:layout_height="48dp"
         android:autofillHints="سال"
         app:layout_constraintBottom_toTopOf="@+id/pass"
         app:layout_constraintEnd_toStartOf="@+id/amonth"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/pass"
@@ -24,13 +25,15 @@
         android:ems="10"
         android:hint="@string/password"
         android:inputType="textPassword"
+        android:minHeight="48dp"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
         app:layout_constraintBottom_toTopOf="@+id/submit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ayear" />
+        app:layout_constraintTop_toBottomOf="@+id/ayear"
+        android:importantForAutofill="no" />
 
     <TextView
         android:id="@+id/textView6"
@@ -46,13 +49,14 @@
     <Spinner
         android:id="@+id/aday"
         android:layout_width="98dp"
-        android:layout_height="43dp"
+        android:layout_height="48dp"
         android:autofillHints="روز"
         app:layout_constraintBottom_toTopOf="@+id/pass"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/amonth"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/username"
@@ -61,6 +65,7 @@
         android:ems="10"
         android:hint="@string/username"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
         android:selectAllOnFocus="true"
@@ -68,7 +73,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/name"
@@ -77,6 +83,7 @@
         android:ems="10"
         android:hint="@string/name"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
         android:selectAllOnFocus="true"
@@ -84,7 +91,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username" />
+        app:layout_constraintTop_toBottomOf="@+id/username"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/lname"
@@ -93,6 +101,7 @@
         android:ems="10"
         android:hint="@string/last_name"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
         android:selectAllOnFocus="true"
@@ -100,12 +109,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name" />
+        app:layout_constraintTop_toBottomOf="@+id/name"
+        android:importantForAutofill="no" />
 
     <Spinner
         android:id="@+id/amonth"
         android:layout_width="98dp"
-        android:layout_height="43dp"
+        android:layout_height="48dp"
         android:autofillHints="ماه"
         app:layout_constraintBottom_toTopOf="@+id/pass"
         app:layout_constraintEnd_toStartOf="@+id/aday"
@@ -121,11 +131,13 @@
         android:ems="10"
         android:hint="@string/phone"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/textView6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lname" />
+        app:layout_constraintTop_toBottomOf="@+id/lname"
+        android:importantForAutofill="no" />
 
     <Button
         android:id="@+id/submit"

@@ -20,8 +20,7 @@
             <GridView
                 android:id="@+id/controller_classes"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:numColumns="2" />
+                android:layout_height="match_parent"/>
         </LinearLayout>
 
         <!--this the navigation view which draws

@@ -41,6 +41,9 @@ public class view_class extends AppCompatActivity {
         new_session = findViewById(R.id.new_session);
         attendees_list = findViewById(R.id.attendees_list);
 
+        new_session.setOnClickListener(view -> {
+
+        });
         attendees_list.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

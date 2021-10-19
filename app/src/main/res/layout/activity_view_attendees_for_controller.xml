@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,25 +14,28 @@
         <TextView
             android:id="@+id/class_id_in_attendee_list"
             android:layout_width="match_parent"
-            android:layout_height="50"
-            android:text=""
-            tools:ignore="TouchTargetSizeCheck"></TextView>
+            android:layout_height="50dp"
+            android:background="#D26FE3"
+            android:textSize="36sp"
+            android:text="@string/space" />
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="10"
-            android:text=""
-            tools:ignore="TouchTargetSizeCheck"></TextView>
+            android:layout_height="10dp"
+            android:background="#17033A"
+            android:text="@string/space"
+            tools:ignore="TouchTargetSizeCheck"/>
         <TextView
             android:id="@+id/class_title_in_attendee_list"
             android:layout_width="match_parent"
-            android:layout_height="40"
-            android:text=""
-            tools:ignore="TouchTargetSizeCheck"></TextView>
+            android:layout_height="40dp"
+            android:background="#8647F6"
+            android:textSize="29sp"
+            android:text="@string/space"
+            tools:ignore="TouchTargetSizeCheck"/>
 
         <GridView
             android:id="@+id/attendees_list"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:numColumns="1" />
+            android:layout_height="match_parent"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

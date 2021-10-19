@@ -123,11 +123,14 @@ public class Controller_account extends AppCompatActivity {
         grid = findViewById(R.id.controller_classes);
         Con_grid_adapter con_grid_adapter = new Con_grid_adapter(Controller_account.this,titles,ids);
         grid.setAdapter(con_grid_adapter);
+        grid.setNumColumns(1);
+        grid.setHorizontalSpacing(1);
         grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                 String id = ids[i];
+
                 Intent intent = new Intent(Controller_account.this, view_class.class);
                 intent.putExtra("id",id);
                 startActivity(intent);
