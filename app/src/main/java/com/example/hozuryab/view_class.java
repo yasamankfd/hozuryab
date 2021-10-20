@@ -22,7 +22,7 @@ public class view_class extends AppCompatActivity {
 
     String GET_CLASS = "http://194.5.195.193/load_class.php";
     TextView id , title , st , et , sd,ed ,place;
-    Button new_session , attendees_list;
+    Button new_session , attendees_list , add_attendee;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +40,15 @@ public class view_class extends AppCompatActivity {
         ed = findViewById(R.id.class_edate_info);
         new_session = findViewById(R.id.new_session);
         attendees_list = findViewById(R.id.attendees_list);
+        add_attendee = findViewById(R.id.add_attendees);
+
+
+        add_attendee.setOnClickListener(view -> {
+            Intent i = new Intent(view_class.this,add_attendee_to_class.class);
+            i.putExtra("classid",id.getText().toString());
+            startActivity(i);
+        });
+
 
         new_session.setOnClickListener(view -> {
 

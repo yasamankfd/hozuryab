@@ -185,6 +185,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="لیست شرکت کنندگان" />
+            <TextView
+                android:layout_width="185dp"
+                android:layout_height="25dp"
+                android:textSize="17dp"></TextView>
+            <Button
+                android:id="@+id/add_attendees"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="افزودن شرکت کننده" />
 
         </LinearLayout>
 

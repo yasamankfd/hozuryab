@@ -35,4 +35,6 @@
     <string name="class_id">شناسه کلاس</string>
     <string name="class_title">عنوان کلاس</string>
     <string name="space"> </string>
+    <string name="attendee_id">نام کاربری شرکت کننده</string>
+    <string name="add_to_class">افزودن به کلاس</string>
 </resources>
