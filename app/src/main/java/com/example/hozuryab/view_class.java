@@ -5,8 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
@@ -21,7 +21,9 @@ import java.net.URLEncoder;
 public class view_class extends AppCompatActivity {
 
     String GET_CLASS = "http://194.5.195.193/load_class.php";
+
     TextView id , title , st , et , sd,ed ,place;
+    GridView sessions;
     Button new_session , attendees_list , add_attendee;
 
     @Override
@@ -39,6 +41,7 @@ public class view_class extends AppCompatActivity {
         sd = findViewById(R.id.class_sdate_info);
         ed = findViewById(R.id.class_edate_info);
         new_session = findViewById(R.id.new_session);
+        sessions = findViewById(R.id.sessions_grid);
         attendees_list = findViewById(R.id.attendees_list);
         add_attendee = findViewById(R.id.add_attendees);
 
@@ -51,17 +54,16 @@ public class view_class extends AppCompatActivity {
 
 
         new_session.setOnClickListener(view -> {
-
+            Intent i = new Intent(view_class.this,Check_list.class);
+            i.putExtra("classid",Id);
+            startActivity(i);
         });
-        attendees_list.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(view_class.this,View_attendees_for_controller.class);
-                i.putExtra("classid",Id);
-                i.putExtra("classtitle",title.getText().toString());
-                startActivity(i);
+        attendees_list.setOnClickListener(view -> {
+            Intent i = new Intent(view_class.this,View_attendees_for_controller.class);
+            i.putExtra("classid",Id);
+            i.putExtra("classtitle",title.getText().toString());
+            startActivity(i);
 
-            }
         });
 
 
@@ -83,6 +85,7 @@ public class view_class extends AppCompatActivity {
         et.setText(splitesd_data[23]);
         sd.setText(splitesd_data[39]);
         ed.setText(splitesd_data[47]);
+
 
     }
 

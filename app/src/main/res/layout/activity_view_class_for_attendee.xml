@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view_class">
+    tools:context=".view_class_for_attendee">
 
     <ScrollView
         android:layout_width="407dp"
@@ -36,7 +36,7 @@
                     android:layout_width="10dp"
                     android:layout_height="match_parent"/>
                 <TextView
-                    android:id="@+id/class_id_info"
+                    android:id="@+id/class_id_info_attendee"
                     android:layout_width="320dp"
                     android:layout_height="50dp"/>
 
@@ -63,7 +63,7 @@
                     android:layout_height="match_parent"/>
 
                 <TextView
-                    android:id="@+id/class_title_info"
+                    android:id="@+id/class_title_info_attendee"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textSize="17sp"/>
@@ -92,7 +92,7 @@
                     android:layout_width="10dp"
                     android:layout_height="match_parent"/>
                 <TextView
-                    android:id="@+id/class_place_info"
+                    android:id="@+id/class_place_info_attendee"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textSize="17sp"/>
@@ -116,7 +116,7 @@
                 android:textSize="17sp">
 
                 <TextView
-                    android:id="@+id/class_stime_info"
+                    android:id="@+id/class_stime_info_attendee"
                     android:layout_width="185dp"
                     android:layout_height="40dp"
                     android:textSize="17sp"/>
@@ -128,7 +128,7 @@
                     android:textSize="17sp"/>
 
                 <TextView
-                    android:id="@+id/class_etime_info"
+                    android:id="@+id/class_etime_info_attendee"
                     android:layout_width="185dp"
                     android:layout_height="40dp"
                     android:textSize="17sp"/>
@@ -148,7 +148,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/class_sdate_info"
+                    android:id="@+id/class_sdate_info_attendee"
                     android:layout_width="185dp"
                     android:layout_height="40dp"
                     android:textSize="17sp"/>
@@ -156,11 +156,12 @@
                 <TextView
                     android:layout_width="30dp"
                     android:layout_height="40dp"
-                    android:text="@string/to"
-                    android:textSize="17sp"/>
+                    android:text=" to"
+                    android:textSize="17sp"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
-                    android:id="@+id/class_edate_info"
+                    android:id="@+id/class_edate_info_attendee"
                     android:layout_width="185dp"
                     android:layout_height="40dp"
                     android:textSize="17sp"/>
@@ -171,33 +172,6 @@
                 android:layout_width="185dp"
                 android:layout_height="25dp"
                 android:textSize="17sp"/>
-            <Button
-                android:id="@+id/new_session"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/newSession" />
-            <TextView
-                android:layout_width="185dp"
-                android:layout_height="25dp"
-                android:textSize="17sp"/>
-            <Button
-                android:id="@+id/attendees_list"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/attendeeList" />
-            <TextView
-                android:layout_width="185dp"
-                android:layout_height="25dp"
-                android:textSize="17sp"/>
-            <Button
-                android:id="@+id/add_attendees"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/addAttendee" />
-            <GridView
-                android:id="@+id/sessions_grid"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
 
         </LinearLayout>
 

@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.GridView;
-import android.widget.TextView;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -16,26 +15,20 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 
-public class View_attendees_for_controller extends AppCompatActivity {
+public class Check_list extends AppCompatActivity {
 
     String get_attendees = "http://194.5.195.193/load_attendees.php";
-    GridView gridView;
-    TextView classtitle , classid;
+    GridView attendees_checklist;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_attendees_for_controller);
+        setContentView(R.layout.activity_check_list);
 
         Bundle b = getIntent().getExtras();
-        String classId = b.getString("classid") , classTitle = b.getString("classtitle");
-
-        classid = findViewById(R.id.class_id_in_attendee_list);
-        classtitle = findViewById(R.id.class_title_in_attendee_list);
-        gridView = findViewById(R.id.attendees_list);
-        classid.setText   ("class ID :    "+classId);
-        classtitle.setText("class title : "+classTitle);
-
-        get_attendees getAttendees = new get_attendees(classId);
+        String Id = b.getString("classid");
+        attendees_checklist = findViewById(R.id.attendees_checklist_grid);
+        System.out.println("pppppppppppppppppppppppppppppppppppppppppppppppppp "+Id);
+        get_attendees getAttendees = new get_attendees(Id);
         getAttendees.execute();
         String result = "nothing";
         try{
@@ -56,16 +49,13 @@ public class View_attendees_for_controller extends AppCompatActivity {
             j+=5;
         }
         String[] ids = rawId.split("-") , names = rawName.split("-");
-        Attendee_list_grid_adapter attendee_list_grid_adapter = new Attendee_list_grid_adapter(View_attendees_for_controller.this,names,ids);
-        gridView.setAdapter(attendee_list_grid_adapter);
-        gridView.setNumColumns(1);
-        gridView.setHorizontalSpacing(5);
-
-
-
+        Abpresence_grid_adapter abpresence_grid_adapter = new Abpresence_grid_adapter(ids,names,Check_list.this);
+        attendees_checklist.setAdapter(abpresence_grid_adapter);
+        attendees_checklist.setNumColumns(1);
+        attendees_checklist.setHorizontalSpacing(5);
 
     }
-    class get_attendees extends AsyncTask{
+    class get_attendees extends AsyncTask {
         String classid;
         public get_attendees(String classid)
         {
@@ -99,6 +89,7 @@ public class View_attendees_for_controller extends AppCompatActivity {
                     sb.append(line + "\n");
                 }
                 res = sb.toString();
+                System.out.println("oooooooooooooooooooooooooooooooooo "+res);
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             } catch (IOException e) {

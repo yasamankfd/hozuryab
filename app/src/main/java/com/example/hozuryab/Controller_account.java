@@ -4,8 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
-
-import android.content.AbstractThreadedSyncAdapter;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -14,10 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
-
-
 import com.google.android.material.navigation.NavigationView;
-
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -60,39 +55,33 @@ public class Controller_account extends AppCompatActivity {
 
 
         System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  "+user);
-
         drawerLayout = findViewById(R.id.controller_drawer_layout);
         navigationView = findViewById(R.id.controller_nac_view);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.nav_open, R.string.nav_close);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
 
-
-        // to make the Navigation drawer icon always appear on the action bar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId())
-                {
-                    case R.id.nav_controller_account:
-                        Intent i = new Intent(ctx,Controller_profile.class);
-                        startActivity(i);
-                        return true;
-                    case R.id.nav_controller_contact:
-                        return true;
+        navigationView.setNavigationItemSelectedListener(item -> {
+            switch (item.getItemId())
+            {
+                case R.id.nav_controller_account:
+                    Intent i = new Intent(ctx,Controller_profile.class);
+                    startActivity(i);
+                    return true;
+                case R.id.nav_controller_contact:
+                    return true;
 
-                    case R.id.nav_controller_logout:
-                        Intent intent = new Intent(ctx,MainActivity.class);
-                        startActivity(intent);
-                        return true;
-                    case R.id.nav_controller_newClass:
-                        Intent intent2 = new Intent(ctx, New_Class.class);
-                        startActivity(intent2);
-                        return true;
-                }
-                return false;
+                case R.id.nav_controller_logout:
+                    Intent intent = new Intent(ctx,MainActivity.class);
+                    startActivity(intent);
+                    return true;
+                case R.id.nav_controller_newClass:
+                    Intent intent2 = new Intent(ctx, New_Class.class);
+                    startActivity(intent2);
+                    return true;
             }
+            return false;
         });
 
         get_classes getClasses = new get_classes(user);
@@ -125,17 +114,14 @@ public class Controller_account extends AppCompatActivity {
         grid.setAdapter(con_grid_adapter);
         grid.setNumColumns(1);
         grid.setHorizontalSpacing(1);
-        grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        grid.setOnItemClickListener((adapterView, view, i1, l) -> {
 
-                String id = ids[i];
+            String id = ids[i1];
 
-                Intent intent = new Intent(Controller_account.this, view_class.class);
-                intent.putExtra("id",id);
-                startActivity(intent);
+            Intent intent = new Intent(Controller_account.this, view_class.class);
+            intent.putExtra("id",id);
+            startActivity(intent);
 
-            }
         });
     }
 

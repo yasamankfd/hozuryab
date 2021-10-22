@@ -120,7 +120,7 @@ public class Attendee_account extends AppCompatActivity {
                 String id = ids[i];
 
 
-                Intent intent = new Intent(Attendee_account.this, view_class.class);
+                Intent intent = new Intent(Attendee_account.this, view_class_for_attendee.class);
                 intent.putExtra("id",id);
                 startActivity(intent);
 

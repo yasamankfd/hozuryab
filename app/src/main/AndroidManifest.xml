@@ -15,6 +15,12 @@
         android:theme="@style/Theme.Hozuryab"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Check_list"
+            android:exported="false" />
+        <activity
+            android:name=".view_class_for_attendee"
+            android:exported="false" />
+        <activity
             android:name=".add_attendee_to_class"
             android:exported="false" />
         <activity
