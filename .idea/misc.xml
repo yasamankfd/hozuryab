@@ -6,6 +6,7 @@
         <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/layout/abpresent_grid.xml" value="0.4" />
         <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/layout/activity_account.xml" value="0.12318840579710146" />
         <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/layout/activity_add_attendee_to_class.xml" value="0.23541666666666666" />
+        <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/layout/activity_add_session.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/layout/activity_attendee_account.xml" value="0.1" />
         <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/layout/activity_attendee_profile.xml" value="0.45323741007194246" />
         <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/layout/activity_attendee_signup.xml" value="0.1" />
@@ -18,7 +19,7 @@
         <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/layout/activity_new_class.xml" value="0.23854166666666668" />
         <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/layout/activity_new_session.xml" value="0.1" />
         <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/layout/activity_view_attendees_for_controller.xml" value="0.1" />
-        <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/layout/activity_view_class.xml" value="0.23220338983050848" />
+        <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/layout/activity_view_class.xml" value="0.176" />
         <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/layout/activity_view_class_for_attendee.xml" value="0.1" />
         <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/layout/app_bar_controller_account.xml" value="0.11145833333333334" />
         <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/layout/attendee_grid.xml" value="0.2" />
@@ -33,6 +34,7 @@
         <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/layout/fragment_profile.xml" value="0.15625" />
         <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/layout/nav_header_controller_account.xml" value="0.1" />
         <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/layout/new_class.xml" value="0.1" />
+        <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/layout/sessions_list_grid.xml" value="0.152" />
         <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/menu/activity_main_drawer.xml" value="0.1" />
         <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/menu/attendee_account.xml" value="0.4466666666666667" />
         <entry key="..\:/Users/yas/AndroidStudioProjects/hozuryab4/app/src/main/res/menu/attendee_navigation_menue.xml" value="0.23854166666666668" />

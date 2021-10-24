@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Hozuryab"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Add_session"
+            android:exported="false" />
+        <activity
             android:name=".Check_list"
             android:exported="false" />
         <activity

@@ -43,4 +43,5 @@
     <string name="to">to</string>
     <string name="hour">ساعت</string>
     <string name="date">تاریخ</string>
+    <string name="session_date">تاریخ جلسه را انتخاب کنید :</string>
 </resources>

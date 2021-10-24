@@ -21,6 +21,7 @@ import java.net.URLEncoder;
 public class view_class extends AppCompatActivity {
 
     String GET_CLASS = "http://194.5.195.193/load_class.php";
+    String GET_SESSIONS = "http://194.5.195.193/load_sessions.php";
 
     TextView id , title , st , et , sd,ed ,place;
     GridView sessions;
@@ -54,7 +55,7 @@ public class view_class extends AppCompatActivity {
 
 
         new_session.setOnClickListener(view -> {
-            Intent i = new Intent(view_class.this,Check_list.class);
+            Intent i = new Intent(view_class.this,Add_session.class);
             i.putExtra("classid",Id);
             startActivity(i);
         });
@@ -70,8 +71,6 @@ public class view_class extends AppCompatActivity {
         get_class getClass = new get_class(Id);
         getClass.execute();
 
-
-
         String class_info ="none";
         try{
             class_info = getClass.get().toString();
@@ -85,6 +84,28 @@ public class view_class extends AppCompatActivity {
         et.setText(splitesd_data[23]);
         sd.setText(splitesd_data[39]);
         ed.setText(splitesd_data[47]);
+
+        get_sessions getSessions = new get_sessions(Id);
+        getSessions.execute();
+        String[] sessions_list={"",""} ,sessions_raw_data=null;
+
+        String sessions_info = "nothing";
+        try{
+            sessions_info = getSessions.get().toString();
+            sessions_raw_data = sessions_info.split("_");
+            int len = sessions_raw_data.length/3,index = 2;
+            for(int i=0 ; i<len ; i++)
+            {
+                sessions_list[i] = sessions_raw_data[index];
+                index+=3;
+            }
+            Sessions_grid_adapter sessions_grid_adapter = new Sessions_grid_adapter(sessions_list,view_class.this);
+            sessions.setAdapter(sessions_grid_adapter);
+            sessions.setNumColumns(2);
+            sessions.setHorizontalSpacing(2);
+            System.out.println("sessssssssssssssssssssssions iiiiiinnnnnnnnfffffffooooorrrmation "+sessions_info);
+        }catch (Exception e){e.printStackTrace();}
+
 
 
     }
@@ -103,6 +124,48 @@ public class view_class extends AppCompatActivity {
 
                 String data = "id=" + URLEncoder.encode(class_id, "UTF-8");
                 URL url = new URL(GET_CLASS);
+
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.setRequestMethod("POST");
+                conn.setDoOutput(true);
+                conn.setDoInput(true);
+                OutputStreamWriter outstream = new OutputStreamWriter(conn.getOutputStream());
+
+                outstream.write(data);
+                outstream.flush();
+
+                BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+
+                StringBuilder sb = new StringBuilder();
+                String line ;
+
+                while ((line = reader.readLine()) != null) {
+                    sb.append(line + "\n");
+                }
+                res = sb.toString();
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return res;
+        }
+    }
+
+    class get_sessions extends AsyncTask {
+        String class_id = "";
+        String res = "nothing";
+        public get_sessions(String id)
+        {
+            class_id = id;
+        }
+
+        @Override
+        protected Object doInBackground(Object[] objects) {
+            try {
+
+                String data = "classid=" + URLEncoder.encode(class_id, "UTF-8");
+                URL url = new URL(GET_SESSIONS);
 
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 conn.setRequestMethod("POST");

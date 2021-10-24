@@ -12,8 +12,6 @@
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp">
-
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -22,7 +20,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="54dp"
+                android:layout_height="40dp"
                 android:orientation="horizontal">
 
 
@@ -43,7 +41,7 @@
             </LinearLayout>
             <TextView
                 android:layout_width="185dp"
-                android:layout_height="20dp"
+                android:layout_height="5dp"
                 android:textSize="17sp"/>
 
             <LinearLayout
@@ -55,7 +53,7 @@
 
                 <TextView
                     android:layout_width="80dp"
-                    android:layout_height="50dp"
+                    android:layout_height="40dp"
                     android:textSize="17sp"
                     android:text="@string/class_title"/>
                 <TextView
@@ -72,7 +70,7 @@
 
             <TextView
                 android:layout_width="185dp"
-                android:layout_height="20dp"
+                android:layout_height="5dp"
                 android:textSize="17sp"/>
 
             <LinearLayout
@@ -83,7 +81,7 @@
 
                 <TextView
                     android:layout_width="80dp"
-                    android:layout_height="50dp"
+                    android:layout_height="40dp"
                     android:textSize="17sp"
                     android:text="@string/place"/>
 
@@ -99,19 +97,19 @@
             </LinearLayout>
             <TextView
                 android:layout_width="185dp"
-                android:layout_height="20dp"
+                android:layout_height="5dp"
                 android:textSize="17sp"/>
 
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:textSize="17sp"
                 android:text="@string/hour"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="54dp"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:textSize="17sp">
 
@@ -137,7 +135,7 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:textSize="17sp"
                 android:text="@string/date"/>
 
@@ -169,7 +167,7 @@
 
             <TextView
                 android:layout_width="185dp"
-                android:layout_height="25dp"
+                android:layout_height="1dp"
                 android:textSize="17sp"/>
             <Button
                 android:id="@+id/new_session"
@@ -178,7 +176,7 @@
                 android:text="@string/newSession" />
             <TextView
                 android:layout_width="185dp"
-                android:layout_height="25dp"
+                android:layout_height="1dp"
                 android:textSize="17sp"/>
             <Button
                 android:id="@+id/attendees_list"
@@ -187,7 +185,7 @@
                 android:text="@string/attendeeList" />
             <TextView
                 android:layout_width="185dp"
-                android:layout_height="25dp"
+                android:layout_height="1dp"
                 android:textSize="17sp"/>
             <Button
                 android:id="@+id/add_attendees"

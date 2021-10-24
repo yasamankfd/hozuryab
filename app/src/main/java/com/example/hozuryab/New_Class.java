@@ -26,7 +26,7 @@ public class New_Class extends AppCompatActivity {
     DatePicker startDate,endDate;
     TimePicker endTime,startTime;
     Button submit;
-    String CLAA_CREATION_URL= "http://194.5.195.193/create_class.php";
+    String CLASS_CREATION_URL = "http://194.5.195.193/create_class.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -119,7 +119,7 @@ public class New_Class extends AppCompatActivity {
             try{
                 String data = "id=" + URLEncoder.encode(id,"UTF-8")
                         +"&"+"title="+title+"&"+"place="+place+"&"+"stime="+stime+"&"+"etime="+etime+"&"+"sdate="+sdate+"&"+"edate="+edate+"&"+"cid="+cid;
-                URL url = new URL(CLAA_CREATION_URL);
+                URL url = new URL(CLASS_CREATION_URL);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 conn.setRequestMethod("POST");
                 conn.setDoOutput(true);
