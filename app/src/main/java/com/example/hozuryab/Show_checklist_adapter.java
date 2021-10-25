@@ -5,19 +5,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Switch;
 import android.widget.TextView;
 
-public class Abpresence_grid_adapter extends BaseAdapter {
-    Context ctx ;
-    String[] names , ids , statuses;
+import com.example.hozuryab.R;
+
+public class Show_checklist_adapter extends BaseAdapter {
+    String[] ids , names , statuses;
+    Context ctx;
     LayoutInflater layoutInflater;
-    public Abpresence_grid_adapter(String[] ids,String[] names , String[] statuses, Context ctx)
+    public Show_checklist_adapter(String[] ids , String[] names ,String[] statuses, Context ctx)
     {
-        this.ids = ids;
-        this.statuses = statuses;
-        this.names = names;
         this.ctx = ctx;
+        this.ids = ids;
+        this.names = names;
+        this.statuses = statuses;
     }
     @Override
     public int getCount() {
@@ -42,21 +43,18 @@ public class Abpresence_grid_adapter extends BaseAdapter {
         }
         if(view == null)
         {
-            view = layoutInflater.inflate(R.layout.abpresent_grid,null);
+            view = layoutInflater.inflate(R.layout.attendee_in_checklist_grid,null);
         }
-        TextView name,id;
-        Switch status = view.findViewById(R.id.status);
-        name = view.findViewById(R.id.name_in_abpresence);
-        id = view.findViewById(R.id.id_in_abpresence);
+        TextView name,id,status;
+        name = view.findViewById(R.id.attendee_name_in_show_checklist);
+        id = view.findViewById(R.id.attendee_id_in_show_checklist);
+        status = view.findViewById(R.id.attendee_status_in_show_checklist);
         name.setText(names[i]);
         id.setText(ids[i]);
         if(statuses[i].equals("p"))
         {
-            status.setChecked(true);
-        }else status.setChecked(false);
-        status.setOnClickListener(view1 -> {
-
-        });
+            status.setText("حاضر");
+        }else status.setText("غایب");
 
         return view;
     }

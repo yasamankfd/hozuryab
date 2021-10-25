@@ -23,17 +23,19 @@ public class view_class extends AppCompatActivity {
     String GET_CLASS = "http://194.5.195.193/load_class.php";
     String GET_SESSIONS = "http://194.5.195.193/load_sessions.php";
 
+    String[] sessions_list;
     TextView id , title , st , et , sd,ed ,place;
     GridView sessions;
     Button new_session , attendees_list , add_attendee;
 
+    String Id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_class);
 
         Bundle b = getIntent().getExtras();
-        String Id = b.getString("id");
+        Id = b.getString("id");
         id = findViewById(R.id.class_id_info);
         title = findViewById(R.id.class_title_info);
         place = findViewById(R.id.class_place_info);
@@ -87,24 +89,36 @@ public class view_class extends AppCompatActivity {
 
         get_sessions getSessions = new get_sessions(Id);
         getSessions.execute();
-        String[] sessions_list={"",""} ,sessions_raw_data=null;
+         String[] sessions_raw_data=null;
 
         String sessions_info = "nothing";
         try{
             sessions_info = getSessions.get().toString();
+            System.out.println("sessssssssssssssssssssssions iiiiiinnnnnnnnfffffffooooorrrmation "+sessions_info);
             sessions_raw_data = sessions_info.split("_");
-            int len = sessions_raw_data.length/3,index = 2;
+            int len = (sessions_raw_data.length)/3,index = 2;
+            String[] temp = sessions_raw_data[sessions_raw_data.length-1].split("x");
+            sessions_list = new String[len];
             for(int i=0 ; i<len ; i++)
             {
                 sessions_list[i] = sessions_raw_data[index];
                 index+=3;
             }
+            sessions_list[len-1]=temp[0];
             Sessions_grid_adapter sessions_grid_adapter = new Sessions_grid_adapter(sessions_list,view_class.this);
             sessions.setAdapter(sessions_grid_adapter);
-            sessions.setNumColumns(2);
+            sessions.setNumColumns(1);
             sessions.setHorizontalSpacing(2);
-            System.out.println("sessssssssssssssssssssssions iiiiiinnnnnnnnfffffffooooorrrmation "+sessions_info);
         }catch (Exception e){e.printStackTrace();}
+
+        sessions.setOnItemClickListener((adapterView, view, i1, l) ->{
+            Intent i = new Intent(view_class.this,Show_checklist.class);
+            i.putExtra("classid",Id);
+            i.putExtra("date",sessions_list[i1]);
+            startActivity(i);
+
+                }
+        );
 
 
 

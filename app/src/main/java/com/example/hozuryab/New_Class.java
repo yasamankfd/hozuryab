@@ -69,7 +69,7 @@ public class New_Class extends AppCompatActivity {
                     System.out.println("----------------------------------------end date = "+ending_date);
 
 
-                    create_class createClass = new create_class(cid.getText().toString(),id.getText().toString(),title.getText().toString(),starting_time,ending_time,starting_date,ending_date,place.getText().toString());
+                    create_class createClass = new create_class(cid.getText().toString(),id.getText().toString(),title.getText().toString(),starting_time,starting_date,ending_time,ending_date,place.getText().toString());
 
                     createClass.execute();
 
