@@ -132,7 +132,6 @@ public class Controller_signup extends AppCompatActivity  {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
             return res;
         }
 

@@ -2,8 +2,10 @@ package com.example.hozuryab;
 
         import androidx.appcompat.app.AppCompatActivity;
 
+        import android.content.Intent;
         import android.os.AsyncTask;
         import android.os.Bundle;
+        import android.widget.Button;
         import android.widget.TextView;
 
         import java.io.BufferedReader;
@@ -19,6 +21,9 @@ public class view_class_for_attendee extends AppCompatActivity {
 
     String GET_CLASS = "http://194.5.195.193/load_class.php";
     TextView id , title , st , et , sd,ed ,place;
+    Button show_list;
+    String classid , aid;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,19 +31,26 @@ public class view_class_for_attendee extends AppCompatActivity {
         setContentView(R.layout.activity_view_class_for_attendee);
 
         Bundle b = getIntent().getExtras();
-        String Id = b.getString("id");
+        classid = b.getString("classid");
+        aid = b.getString("aid");
         id = findViewById(R.id.class_id_info_attendee);
         title = findViewById(R.id.class_title_info_attendee);
         place = findViewById(R.id.class_place_info_attendee);
         st = findViewById(R.id.class_stime_info_attendee);
         et = findViewById(R.id.class_etime_info_attendee);
         sd = findViewById(R.id.class_sdate_info_attendee);
+        show_list = findViewById(R.id.show_sessions_abpresence_for_aten);
         ed = findViewById(R.id.class_edate_info_attendee);
 
-        get_class getClass = new get_class(Id);
+        show_list.setOnClickListener(view -> {
+            Intent intent = new Intent(view_class_for_attendee.this,Show_abpresence_for_attendee.class);
+            intent.putExtra("classid",classid);
+            intent.putExtra("aid",aid);
+            startActivity(intent);
+        });
+
+        get_class getClass = new get_class(classid);
         getClass.execute();
-
-
 
         String class_info ="none";
         try{

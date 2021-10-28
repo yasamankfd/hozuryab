@@ -39,9 +39,9 @@ public class Show_checklist extends AppCompatActivity {
 
         edit_checklist.setOnClickListener(view -> {
             Intent i = new Intent(Show_checklist.this,Check_list.class);
-            i.putExtra("ids",ids);
-            i.putExtra("names",names);
-            i.putExtra("statuses",statuses);
+            i.putExtra("classid",Id);
+            i.putExtra("date",sDate);
+            i.putExtra("mode","editing");
             startActivity(i);
         });
 
@@ -55,18 +55,24 @@ public class Show_checklist extends AppCompatActivity {
         {
             e.printStackTrace();
         }
-        System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  "+result);
+        System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  show checklist "+result);
         String[] raw_attendees_data = result.split("_");
         int length = raw_attendees_data.length , len = length/7,i= 2, j = 4,k=6;
         String rawId = "",rawName = "",rawStatus = "";
         for(int l =0 ; l<len ; l++)
         {
-            rawId+=raw_attendees_data[i]+"_";
+            rawId+=raw_attendees_data[i];
             i+=7;
-            rawName+=raw_attendees_data[j]+"_";
+            rawName+=raw_attendees_data[j];
             j+=7;
-            rawStatus+=raw_attendees_data[k]+"_";
+            rawStatus+=raw_attendees_data[k];
             k+=7;
+            if(len-l>1)
+            {
+                rawId+="_";
+                rawName+="_";
+                rawStatus+="_";
+            }
         }
         ids = rawId.split("_");
         names = rawName.split("_");

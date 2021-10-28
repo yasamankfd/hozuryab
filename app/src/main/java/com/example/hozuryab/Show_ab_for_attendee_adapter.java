@@ -7,22 +7,19 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.example.hozuryab.R;
-
-public class Show_checklist_adapter extends BaseAdapter {
-    String[] ids , names , statuses;
+public class Show_ab_for_attendee_adapter extends BaseAdapter {
+    String[] dates , statuses;
     Context ctx;
     LayoutInflater layoutInflater;
-    public Show_checklist_adapter(String[] ids , String[] names ,String[] statuses, Context ctx)
+    public Show_ab_for_attendee_adapter(String[] dates ,String[] statuses, Context ctx)
     {
         this.ctx = ctx;
-        this.ids = ids;
-        this.names = names;
+        this.dates = dates;
         this.statuses = statuses;
     }
     @Override
     public int getCount() {
-        return ids.length;
+        return dates.length;
     }
 
     @Override
@@ -43,14 +40,14 @@ public class Show_checklist_adapter extends BaseAdapter {
         }
         if(view == null)
         {
-            view = layoutInflater.inflate(R.layout.attendee_in_checklist_grid,null);
+            view = layoutInflater.inflate(R.layout.abpresence_for_attendee_grid,null);
         }
-        TextView name,id,status;
-        name = view.findViewById(R.id.attendee_name_in_show_checklist);
-        id = view.findViewById(R.id.attendee_id_in_show_checklist);
-        status = view.findViewById(R.id.attendee_status_in_show_checklist);
-        name.setText(names[i]);
-        id.setText(ids[i]);
+        TextView date,status;
+
+        date = view.findViewById(R.id.session_date_in_show_checklist);
+        status = view.findViewById(R.id.session_status_in_show_checklist);
+        date.setText(dates[i]);
+
         if(statuses[i].contains("p"))
         {
             status.setText("حاضر");

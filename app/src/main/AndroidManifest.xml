@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Hozuryab"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Show_abpresence_for_attendee"
+            android:exported="false" />
+        <activity
             android:name=".Show_checklist"
             android:exported="false" />
         <activity

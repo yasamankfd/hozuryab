@@ -89,6 +89,8 @@ public class Attendee_account extends AppCompatActivity {
         }
         ids = rawId.split("-");
         titles = rawTitle.split("-");
+        String[] temp =titles[len-1].split("-");
+        titles[len-1] = temp[0];
         grid = findViewById(R.id.attendee_classes);
         Con_grid_adapter con_grid_adapter = new Con_grid_adapter(Attendee_account.this,titles,ids);
         grid.setAdapter(con_grid_adapter);
@@ -113,18 +115,15 @@ public class Attendee_account extends AppCompatActivity {
             return false;
         });
 
-        grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        grid.setOnItemClickListener((adapterView, view, i12, l) -> {
 
-                String id = ids[i];
+            String id = ids[i12];
 
+            Intent intent = new Intent(Attendee_account.this, view_class_for_attendee.class);
+            intent.putExtra("classid",id);
+            intent.putExtra("aid",user);
+            startActivity(intent);
 
-                Intent intent = new Intent(Attendee_account.this, view_class_for_attendee.class);
-                intent.putExtra("id",id);
-                startActivity(intent);
-
-            }
         });
 
 
