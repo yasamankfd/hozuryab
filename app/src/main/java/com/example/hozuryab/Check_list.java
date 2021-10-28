@@ -32,7 +32,6 @@ public class Check_list extends AppCompatActivity {
         classid = b.getString("classid");
         sdate = b.getString("date");
         mode = b.getString("mode");
-        System.out.println("\n\n\n\n\nyyyyyyyyyyyyyyyyy");
         attendees_checklist = findViewById(R.id.attendees_checklist_grid);
 
         if(mode.equals("editing"))
@@ -82,7 +81,7 @@ public class Check_list extends AppCompatActivity {
             }
             System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ first time inserting to ab "+result);
 
-            String[] raw_attendees_data = result.split("-");
+            String[] raw_attendees_data = result.split("_");
             int length = raw_attendees_data.length , len = length/5,i= 2, j = 4;
             String rawId = "",rawName = "";
             for(int k =0 ; k<len ; k++)
@@ -97,8 +96,10 @@ public class Check_list extends AppCompatActivity {
                     rawName+="_";
                 }
             }
-            ids = rawId.split("-");
-            names = rawName.split("-");
+            ids = rawId.split("_");
+            names = rawName.split("_");
+            String[] temp = names[len-1].split("-");
+            names[len-1]=temp[0];
         }
 
         Abpresence_grid_adapter abpresence_grid_adapter = new Abpresence_grid_adapter(ids,names,statuses,classid,sdate,mode,Check_list.this);

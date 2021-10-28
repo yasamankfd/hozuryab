@@ -92,37 +92,35 @@ public class Abpresence_grid_adapter extends BaseAdapter {
                 e.printStackTrace();
             }
         }else if(mode.equals("editing")){
-            System.out.println("?????????????????????????????????????????????????????????????????->"+statuses[i]+"+"+i);
+
             if(statuses[i].contains("p"))
             {
                 status.setChecked(true);
             }else status.setChecked(false);
-            status.setOnClickListener(view1 -> {
-                String stat ;
-                if(status.isChecked())
-                {
-                    stat="p";
-                }else stat="a";
-
-                System.out.println("$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$##$#$#$#$#$ ->"+ids[i]+"-"+classid+"-"+sdate+"-"+stat);
-                sendDataToServer sendDataToServer1 = new sendDataToServer(ids[i],classid,sdate,stat,EDIT_ABPRESENCE);
-                sendDataToServer1.execute();
-                try {
-                    String res = sendDataToServer1.get();
-                    System.out.println("reeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeees  edit abpresence "+res);
-                    if (res.contains("o")) {
-                        System.out.println("edit saved---------------------------------------------------------------------------------------");
-                    } else System.out.println("edit not saved---------------------------------------------------------------------------------------------");
-
-                } catch (ExecutionException e) {
-                    e.printStackTrace();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            });
         }
+        status.setOnClickListener(view1 -> {
+            String stat ;
+            if(status.isChecked())
+            {
+                stat="p";
+            }else stat="a";
 
+            System.out.println("$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$##$#$#$#$#$ ->"+ids[i]+"-"+classid+"-"+sdate+"-"+stat);
+            sendDataToServer sendDataToServer1 = new sendDataToServer(ids[i],classid,sdate,stat,EDIT_ABPRESENCE);
+            sendDataToServer1.execute();
+            try {
+                String res = sendDataToServer1.get();
+                System.out.println("reeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeees  edit abpresence "+res);
+                if (res.contains("o")) {
+                    System.out.println("edit saved---------------------------------------------------------------------------------------");
+                } else System.out.println("edit not saved---------------------------------------------------------------------------------------------");
 
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
         return view;
     }
     public class sendDataToServer extends AsyncTask<Object,Object,String> {
@@ -136,7 +134,6 @@ public class Abpresence_grid_adapter extends BaseAdapter {
             this.status = status;
             this.phpurl = phpurl;
         }
-
         @Override
         protected String doInBackground(Object... objects) {
             String res = null;

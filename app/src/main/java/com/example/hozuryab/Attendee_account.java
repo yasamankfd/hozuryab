@@ -89,8 +89,8 @@ public class Attendee_account extends AppCompatActivity {
         }
         ids = rawId.split("-");
         titles = rawTitle.split("-");
-        String[] temp =titles[len-1].split("-");
-        titles[len-1] = temp[0];
+        //String[] temp =titles[len-1].split("-");
+        //titles[len-1] = temp[0];
         grid = findViewById(R.id.attendee_classes);
         Con_grid_adapter con_grid_adapter = new Con_grid_adapter(Attendee_account.this,titles,ids);
         grid.setAdapter(con_grid_adapter);

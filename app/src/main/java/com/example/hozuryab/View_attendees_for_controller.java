@@ -45,17 +45,19 @@ public class View_attendees_for_controller extends AppCompatActivity {
             e.printStackTrace();
         }
         System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  "+result);
-        String[] raw_attendees_data = result.split("-");
+        String[] raw_attendees_data = result.split("_");
         int length = raw_attendees_data.length , len = length/5,i= 2, j = 4;
         String rawId = "",rawName = "";
         for(int k =0 ; k<len ; k++)
         {
-            rawId+=raw_attendees_data[i]+"-";
+            rawId+=raw_attendees_data[i]+"_";
             i+=5;
-            rawName+=raw_attendees_data[j]+"-";
+            rawName+=raw_attendees_data[j]+"_";
             j+=5;
         }
-        String[] ids = rawId.split("-") , names = rawName.split("-");
+        String[] ids = rawId.split("_") , names = rawName.split("_");
+        String[] temp = names[len-1].split("-");
+        names[len-1]=temp[0];
         Attendee_list_grid_adapter attendee_list_grid_adapter = new Attendee_list_grid_adapter(View_attendees_for_controller.this,names,ids);
         gridView.setAdapter(attendee_list_grid_adapter);
         gridView.setNumColumns(1);
