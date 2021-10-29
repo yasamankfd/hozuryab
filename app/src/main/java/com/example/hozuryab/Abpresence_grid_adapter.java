@@ -96,14 +96,16 @@ public class Abpresence_grid_adapter extends BaseAdapter {
             if(statuses[i].contains("p"))
             {
                 status.setChecked(true);
-            }else status.setChecked(false);
+                status.setText("حاضر");
+            }else {status.setChecked(false);   status.setText("غایب");}
         }
         status.setOnClickListener(view1 -> {
             String stat ;
             if(status.isChecked())
             {
                 stat="p";
-            }else stat="a";
+                status.setText("حاضر");
+            }else {stat="a"; status.setText("غایب");}
 
             System.out.println("$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$##$#$#$#$#$ ->"+ids[i]+"-"+classid+"-"+sdate+"-"+stat);
             sendDataToServer sendDataToServer1 = new sendDataToServer(ids[i],classid,sdate,stat,EDIT_ABPRESENCE);

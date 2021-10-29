@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view_class_for_attendee">
+    tools:context=".view_class_for_attendee"
+    android:background="@drawable/round_background">
 
     <ScrollView
         android:layout_width="407dp"
@@ -30,7 +31,8 @@
                     android:layout_width="80dp"
                     android:layout_height="50dp"
                     android:textSize="17sp"
-                    android:text="@string/class_id"/>
+                    android:text="@string/class_id"
+                    android:background="@drawable/round_textview"/>
 
                 <TextView
                     android:layout_width="10dp"
@@ -38,7 +40,8 @@
                 <TextView
                     android:id="@+id/class_id_info_attendee"
                     android:layout_width="320dp"
-                    android:layout_height="50dp"/>
+                    android:layout_height="50dp"
+                    android:background="@drawable/round_textview"/>
 
             </LinearLayout>
             <TextView
@@ -57,7 +60,8 @@
                     android:layout_width="80dp"
                     android:layout_height="50dp"
                     android:textSize="17sp"
-                    android:text="@string/class_title"/>
+                    android:text="@string/class_title"
+                    android:background="@drawable/round_textview"/>
                 <TextView
                     android:layout_width="10dp"
                     android:layout_height="match_parent"/>
@@ -65,8 +69,9 @@
                 <TextView
                     android:id="@+id/class_title_info_attendee"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textSize="17sp"/>
+                    android:layout_height="39dp"
+                    android:textSize="17sp"
+                    android:background="@drawable/round_textview"/>
 
             </LinearLayout>
 
@@ -85,7 +90,8 @@
                     android:layout_width="80dp"
                     android:layout_height="50dp"
                     android:textSize="17sp"
-                    android:text="@string/place"/>
+                    android:text="@string/place"
+                    android:background="@drawable/round_textview"/>
 
 
                 <TextView
@@ -95,7 +101,8 @@
                     android:id="@+id/class_place_info_attendee"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:textSize="17sp"/>
+                    android:textSize="17sp"
+                    android:background="@drawable/round_textview"/>
             </LinearLayout>
             <TextView
                 android:layout_width="185dp"
@@ -119,7 +126,8 @@
                     android:id="@+id/class_stime_info_attendee"
                     android:layout_width="185dp"
                     android:layout_height="40dp"
-                    android:textSize="17sp"/>
+                    android:textSize="17sp"
+                    android:background="@drawable/round_textview"/>
 
                 <TextView
                     android:layout_width="30dp"
@@ -131,7 +139,8 @@
                     android:id="@+id/class_etime_info_attendee"
                     android:layout_width="185dp"
                     android:layout_height="40dp"
-                    android:textSize="17sp"/>
+                    android:textSize="17sp"
+                    android:background="@drawable/round_textview"/>
 
             </LinearLayout>
 
@@ -151,7 +160,8 @@
                     android:id="@+id/class_sdate_info_attendee"
                     android:layout_width="185dp"
                     android:layout_height="40dp"
-                    android:textSize="17sp"/>
+                    android:textSize="17sp"
+                    android:background="@drawable/round_textview"/>
 
                 <TextView
                     android:layout_width="30dp"
@@ -164,7 +174,8 @@
                     android:id="@+id/class_edate_info_attendee"
                     android:layout_width="185dp"
                     android:layout_height="40dp"
-                    android:textSize="17sp"/>
+                    android:textSize="17sp"
+                    android:background="@drawable/round_textview"/>
 
             </LinearLayout>
 

@@ -2,20 +2,22 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="85dp"
     android:layout_gravity="center"
     android:orientation="vertical"
-    android:padding="4dp">
+    android:padding="4dp"
+    android:background="@drawable/round_background">
 
     <TextView
         android:id="@+id/attendee_class_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="163dp"
-        android:layout_marginLeft="163dp"
-        android:layout_marginTop="37dp"
+        android:layout_marginStart="168dp"
+        android:layout_marginLeft="168dp"
+        android:layout_marginTop="15dp"
         android:layout_marginBottom="8dp"
         android:text="Title"
+        android:layout_gravity="center"
         android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/attendee_class_id"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,25 +31,11 @@
         android:layout_marginRight="12dp"
         android:layout_marginBottom="12dp"
         android:text="id"
+        android:layout_gravity="center"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView7"
         app:layout_constraintEnd_toEndOf="@+id/attendee_class_title"
         app:layout_constraintTop_toBottomOf="@+id/attendee_class_title" />
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginRight="4dp"
-        android:layout_marginBottom="4dp"
-        android:background="#17033A"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/attendee_class_id" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

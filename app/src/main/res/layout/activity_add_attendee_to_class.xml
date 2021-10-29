@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".add_attendee_to_class">
+    tools:context=".add_attendee_to_class"
+    android:background="@drawable/round_background">
 
     <Button
         android:id="@+id/add_to_class"
@@ -28,5 +29,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintVertical_chainStyle="packed"
+        android:background="@drawable/round_textview"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".New_Class">>
+    tools:context=".New_Class"
+    android:background="@drawable/round_background">
 
 
 
@@ -32,48 +33,56 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints="start time :"
-                android:timePickerMode="spinner" />
+                android:timePickerMode="spinner"
+                android:background="@drawable/round_textview"/>
 
             <TimePicker
                 android:id="@+id/end_time"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints="end time :"
-                android:timePickerMode="spinner" />
+                android:timePickerMode="spinner"
+                android:background="@drawable/round_textview"/>
 
             <EditText
                 android:id="@+id/class_title"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="عنوان کلاس"
-                tools:ignore="TouchTargetSizeCheck"></EditText>
+                android:background="@drawable/round_textview"
+                tools:ignore="TouchTargetSizeCheck"/>
 
             <EditText
                 android:id="@+id/class_id"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="شناسه کلاس"
-                tools:ignore="TouchTargetSizeCheck"></EditText>
+                android:background="@drawable/round_textview"
+                tools:ignore="TouchTargetSizeCheck"/>
 
             <EditText
                 android:id="@+id/place"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="مکان"
-                tools:ignore="TouchTargetSizeCheck"></EditText>
+                tools:ignore="TouchTargetSizeCheck"
+                android:background="@drawable/round_textview"/>
 
 
             <DatePicker
                 android:id="@+id/start_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:datePickerMode="spinner"></DatePicker>
+                android:layout_gravity="center"
+                android:background="@drawable/round_textview"/>
 
             <DatePicker
                 android:id="@+id/end_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:datePickerMode="spinner"></DatePicker>
+                android:datePickerMode="spinner"
+                android:layout_gravity="center"
+                android:background="@drawable/round_textview"/>
 
         </LinearLayout>
 

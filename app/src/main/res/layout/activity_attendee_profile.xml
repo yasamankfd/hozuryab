@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Attendee_profile">
+    tools:context=".Attendee_profile"
+    android:background="@drawable/round_background">
 
     <Spinner
         android:id="@+id/attende_profile_bdate_day"
@@ -15,7 +16,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/attende_profile_bdate_year"
         app:layout_constraintTop_toBottomOf="@+id/attendee_day"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck"
+        android:background="@drawable/round_textview"/>
 
     <TextView
         android:id="@+id/attendee_year"
@@ -59,7 +61,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/attendee_year"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck"
+        android:background="@drawable/round_textview"/>
 
     <Spinner
         android:id="@+id/attende_profile_bdate_year"
@@ -70,7 +73,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/attende_profile_bdate_month"
         app:layout_constraintTop_toBottomOf="@+id/attendee_month"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck"
+        android:background="@drawable/round_textview"/>
 
     <Button
         android:id="@+id/uploadpic"
@@ -81,7 +85,8 @@
         app:layout_constraintEnd_toStartOf="@+id/attende_profile_image"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/round_textview"/>
 
     <Button
         android:id="@+id/attendee_editinfo"
@@ -94,6 +99,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/round_textview"
         app:layout_constraintTop_toBottomOf="@+id/attende_profile_bdate_day" />
 
     <ImageView
@@ -104,7 +110,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/uploadpic"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/round_textview"/>
 
     <EditText
         android:id="@+id/attende_profile_uname"
@@ -113,6 +120,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:background="@drawable/round_textview"
         android:text=""
         app:layout_constraintBottom_toTopOf="@+id/attende_profile_lname"
         app:layout_constraintEnd_toEndOf="parent"
@@ -125,7 +133,7 @@
         android:id="@+id/attende_profile_phone"
         android:layout_width="260dp"
         android:layout_height="50dp"
-
+        android:background="@drawable/round_textview"
         android:ems="10"
         android:inputType="phone"
         android:minHeight="48dp"
@@ -150,7 +158,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/attende_profile_uname"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck"
+        android:background="@drawable/round_textview"/>
 
     <EditText
         android:id="@+id/attende_profile_name"
@@ -165,7 +174,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/attende_profile_lname"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck"
+        android:background="@drawable/round_textview"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

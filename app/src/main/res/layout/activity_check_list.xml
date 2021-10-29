@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Check_list">
+    tools:context=".Check_list"
+    android:background="@drawable/round_background">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical" >
+            android:orientation="vertical"
+            android:background="@drawable/round_background">
 
             <GridView
                 android:id="@+id/attendees_checklist_grid"

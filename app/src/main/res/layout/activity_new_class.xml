@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".New_Class">
+    tools:context=".New_Class"
+    android:background="@drawable/round_background">
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -13,7 +14,7 @@
         android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0">
@@ -29,82 +30,109 @@
                 android:id="@+id/class_title"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@drawable/round_textview"
                 android:hint="@string/class_title"
-                tools:ignore="TouchTargetSizeCheck"></EditText>
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="5dp"/>
 
             <EditText
                 android:id="@+id/class_id"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@drawable/round_textview"
                 android:hint="@string/class_id"
-                tools:ignore="TouchTargetSizeCheck"></EditText>
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="5dp"/>
 
             <EditText
                 android:id="@+id/place"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@drawable/round_textview"
                 android:hint="@string/place"
-                tools:ignore="TouchTargetSizeCheck"></EditText>
+                tools:ignore="TouchTargetSizeCheck" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="5dp"/>
 
             <EditText
                 android:id="@+id/controller_id"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@drawable/round_textview"
                 android:hint="@string/username"
-                tools:ignore="TouchTargetSizeCheck"></EditText>
+                tools:ignore="TouchTargetSizeCheck" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="5dp"/>
 
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="ساعت شروع"></TextView>
+                android:text="ساعت شروع" />
+
             <TimePicker
                 android:id="@+id/end_time"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints="start time :"
+                android:background="@drawable/round_textview"
                 android:timePickerMode="spinner" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="ساعت پایان"></TextView>
+                android:text="ساعت پایان" />
+
+
             <TimePicker
                 android:id="@+id/start_time"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints="end time :"
+                android:background="@drawable/round_textview"
                 android:timePickerMode="spinner" />
-
-
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="تاریخ شروع"></TextView>
+                android:text="تاریخ شروع" />
+
             <DatePicker
                 android:id="@+id/start_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:datePickerMode="calendar">
+                android:datePickerMode="calendar"
+                android:layout_gravity="center"
+                android:background="@drawable/round_textview"/>
 
-            </DatePicker>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="تاریخ پایان"></TextView>
+                android:text="تاریخ پایان" />
+
             <DatePicker
                 android:id="@+id/end_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:datePickerMode="calendar"></DatePicker>
+                android:background="@drawable/round_textview"
+                android:datePickerMode="calendar"
+                android:layout_gravity="center"/>
+
             <Button
+                android:id="@+id/submit_class"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="@string/submit"
-                android:id="@+id/submit_class">
-            </Button>
+                android:background="@drawable/round_textview"/>
 
         </LinearLayout>
 

@@ -15,7 +15,7 @@
             android:id="@+id/class_id_in_attendee_list"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="#D26FE3"
+            android:background="#6CEC71"
             android:textSize="36sp"
             android:text="@string/space" />
         <TextView
@@ -28,7 +28,7 @@
             android:id="@+id/class_title_in_attendee_list"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:background="#8647F6"
+            android:background="#BE78F66F"
             android:textSize="29sp"
             android:text="@string/space"
             tools:ignore="TouchTargetSizeCheck"/>
@@ -36,6 +36,7 @@
         <GridView
             android:id="@+id/attendees_list"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:background="@drawable/round_textview"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
