@@ -10,7 +10,7 @@
   <EditText
       android:id="@+id/controller_profile_uname"
       android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
+      android:layout_height="50dp"
       android:ems="10"
       android:inputType="textPersonName"
       android:text=""
@@ -25,7 +25,7 @@
   <EditText
       android:id="@+id/controller_profile_name"
       android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
+      android:layout_height="50dp"
       android:ems="10"
       android:inputType="textPersonName"
       android:text=""
@@ -39,7 +39,7 @@
   <EditText
       android:id="@+id/controller_profile_email"
       android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
+      android:layout_height="50dp"
       android:ems="10"
       android:inputType="textPersonName"
       android:text=""
@@ -53,7 +53,7 @@
   <EditText
       android:id="@+id/controller_profile_lname"
       android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
+      android:layout_height="50dp"
       android:ems="10"
       android:inputType="textPersonName"
       android:text=""

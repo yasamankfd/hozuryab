@@ -2,6 +2,7 @@ package com.example.hozuryab;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.GridView;
@@ -20,6 +21,7 @@ public class View_attendees_for_controller extends AppCompatActivity {
 
     String get_attendees = "http://194.5.195.193/load_attendees.php";
     GridView gridView;
+    String classId,classTitle;
     TextView classtitle , classid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +29,8 @@ public class View_attendees_for_controller extends AppCompatActivity {
         setContentView(R.layout.activity_view_attendees_for_controller);
 
         Bundle b = getIntent().getExtras();
-        String classId = b.getString("classid") , classTitle = b.getString("classtitle");
+        classId = b.getString("classid");
+        classTitle = b.getString("classtitle");
 
         classid = findViewById(R.id.class_id_in_attendee_list);
         classtitle = findViewById(R.id.class_title_in_attendee_list);
@@ -62,6 +65,14 @@ public class View_attendees_for_controller extends AppCompatActivity {
         gridView.setAdapter(attendee_list_grid_adapter);
         gridView.setNumColumns(1);
         gridView.setHorizontalSpacing(5);
+        gridView.setOnItemClickListener((adapterView, view, i12, l) ->{
+            String id = ids[i12];
+
+            Intent intent = new Intent(View_attendees_for_controller.this, Show_attendee_for_controller.class);
+            intent.putExtra("classid",classId);
+            intent.putExtra("aid",id);
+            startActivity(intent);
+        });
 
 
 

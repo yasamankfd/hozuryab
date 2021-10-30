@@ -28,7 +28,6 @@ public class Controller_account extends AppCompatActivity {
     Context ctx = this;
     String user = "";
     String GET_URL = "http://194.5.195.193/load_classes.php";
-    String GET_TABLE = "http://194.5.195.193/load_ctable.php";
     public DrawerLayout drawerLayout;
     GridView grid;
     public ActionBarDrawerToggle actionBarDrawerToggle;
@@ -109,6 +108,8 @@ public class Controller_account extends AppCompatActivity {
         }
         ids = rawId.split("-");
         titles = rawTitle.split("-");
+        String[] temp = titles[len-1].split("_");
+        titles[len-1] = temp[0];
         grid = findViewById(R.id.controller_classes);
         Con_grid_adapter con_grid_adapter = new Con_grid_adapter(Controller_account.this,titles,ids);
         grid.setAdapter(con_grid_adapter);

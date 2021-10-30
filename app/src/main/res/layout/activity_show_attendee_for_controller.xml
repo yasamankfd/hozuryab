@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Show_attendee_for_controller"
+    android:background="@drawable/round_background">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:layout_marginBottom="0dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:text="@string/name"
+                android:textSize="17sp"
+                android:background="@drawable/round_textview"/>
+
+            <TextView
+                android:layout_width="10dp"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/aname_in_show_attendee"
+                android:layout_width="320dp"
+                android:layout_height="50dp"
+                android:background="@drawable/round_textview"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="185dp"
+            android:layout_height="5dp"
+            android:textSize="17sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:orientation="horizontal"
+            android:textSize="17sp">
+
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:text="@string/last_name"
+                android:textSize="17sp"
+                android:background="@drawable/round_textview"/>
+
+            <TextView
+                android:layout_width="10dp"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/lname_in_show_attendee"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="17sp"
+                android:background="@drawable/round_textview"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="185dp"
+            android:layout_height="5dp"
+            android:textSize="17sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:text="@string/birth_date"
+                android:textSize="17sp"
+                android:background="@drawable/round_textview"/>
+
+
+            <TextView
+                android:layout_width="10dp"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/bdate_in_show_attendee"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="17sp"
+                android:background="@drawable/round_textview"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="185dp"
+            android:layout_height="1dp"
+            android:textSize="17sp" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:text="@string/space"
+            android:textSize="17sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:textSize="17sp">
+
+            <TextView
+                android:id="@+id/class_stime_info"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:textSize="17sp"
+                android:text="@string/phone"
+                android:background="@drawable/round_textview"/>
+
+            <TextView
+                android:layout_width="10dp"
+                android:layout_height="40dp"
+                android:text="@string/space"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/aphone_in_show_attendee"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textSize="17sp"
+                android:background="@drawable/round_textview"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:text="@string/space"
+            android:textSize="17sp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/class_sdate_info"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:textSize="17sp"
+                android:text="@string/username"
+                android:background="@drawable/round_textview"/>
+
+            <TextView
+                android:layout_width="10dp"
+                android:layout_height="40dp"
+                android:text="@string/space"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/uname_show_attendee"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textSize="17sp"
+                android:background="@drawable/round_textview"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="185dp"
+            android:layout_height="1dp"
+            android:textSize="17sp" />
+
+
+        <TextView
+            android:layout_width="185dp"
+            android:layout_height="3dp"
+            android:textSize="17sp" />
+
+
+        <TextView
+            android:layout_width="185dp"
+            android:layout_height="3dp"
+            android:textSize="17sp" />
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_textview"
+            android:text="@string/sessions_list"
+            android:textSize="17sp" />
+
+        <GridView
+            android:id="@+id/sessions_single_attendee_grid"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="0dp"
+            android:background="@drawable/round_textview"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

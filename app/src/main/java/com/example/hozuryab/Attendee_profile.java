@@ -384,15 +384,8 @@ public class Attendee_profile extends AppCompatActivity {
             }
             return res;
         }
-
-
-
         @Override
-        protected void onPreExecute() {
-
-        }
-
-
+        protected void onPreExecute() { }
     }
 
 }

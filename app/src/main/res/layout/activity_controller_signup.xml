@@ -11,7 +11,7 @@
     <EditText
         android:id="@+id/cemail"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:ems="10"
         android:hint="@string/email"
         android:background="@drawable/round_textview"
@@ -27,7 +27,7 @@
     <EditText
         android:id="@+id/cpass"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:ems="10"
         android:hint="@string/password"
         android:background="@drawable/round_textview"
@@ -56,7 +56,7 @@
     <EditText
         android:id="@+id/cname"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:ems="10"
         android:hint="@string/name"
         android:background="@drawable/round_textview"
@@ -73,7 +73,7 @@
     <EditText
         android:id="@+id/cusername"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:ems="10"
         android:hint="@string/username"
         android:background="@drawable/round_textview"
@@ -90,7 +90,7 @@
     <EditText
         android:id="@+id/clname"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:ems="10"
         android:hint="@string/last_name"
         android:background="@drawable/round_textview"

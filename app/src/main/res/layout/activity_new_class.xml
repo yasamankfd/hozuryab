@@ -29,7 +29,8 @@
             <EditText
                 android:id="@+id/class_title"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="50dp"
+                android:textSize="20sp"
                 android:background="@drawable/round_textview"
                 android:hint="@string/class_title"
                 tools:ignore="TouchTargetSizeCheck" />
@@ -41,9 +42,10 @@
             <EditText
                 android:id="@+id/class_id"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="50dp"
                 android:background="@drawable/round_textview"
                 android:hint="@string/class_id"
+                android:textSize="20sp"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <TextView
@@ -53,9 +55,10 @@
             <EditText
                 android:id="@+id/place"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="50dp"
                 android:background="@drawable/round_textview"
                 android:hint="@string/place"
+                android:textSize="20sp"
                 tools:ignore="TouchTargetSizeCheck" />
             <TextView
                 android:layout_width="match_parent"
@@ -64,9 +67,10 @@
             <EditText
                 android:id="@+id/controller_id"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="50dp"
                 android:background="@drawable/round_textview"
                 android:hint="@string/username"
+                android:textSize="20sp"
                 tools:ignore="TouchTargetSizeCheck" />
             <TextView
                 android:layout_width="match_parent"
@@ -76,7 +80,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="ساعت شروع" />
+                android:text="ساعت شروع"
+                android:textSize="20sp"/>
 
             <TimePicker
                 android:id="@+id/end_time"
@@ -89,7 +94,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="ساعت پایان" />
+                android:text="ساعت پایان"
+                android:textSize="20sp"/>
 
 
             <TimePicker
@@ -103,7 +109,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="تاریخ شروع" />
+                android:text="تاریخ شروع"
+                android:textSize="20sp"/>
 
             <DatePicker
                 android:id="@+id/start_date"
@@ -117,7 +124,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="تاریخ پایان" />
+                android:text="تاریخ پایان"
+                android:textSize="20sp"/>
 
             <DatePicker
                 android:id="@+id/end_date"
