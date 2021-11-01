@@ -33,7 +33,7 @@ public class Controller_account extends AppCompatActivity {
     public ActionBarDrawerToggle actionBarDrawerToggle;
     private NavigationView navigationView ;
 
-    String[] titles  , ids ;
+    String[] titles ={} , ids={} ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,20 +96,24 @@ public class Controller_account extends AppCompatActivity {
         }
 
         String[] raw_class_data = classdata.split("-");
-        int len = raw_class_data.length/5, i=3,j=5;
-        String rawId = "",rawTitle = "";
-        for(int k =0 ; k<len ; k++)
+        if(raw_class_data.length>1)
         {
-            rawId+=raw_class_data[i]+"-";
-            i+=5;
-            rawTitle+=raw_class_data[j]+"-";
-            j+=5;
+            int len = raw_class_data.length/5, i=3,j=5;
+            String rawId = "",rawTitle = "";
+            for(int k =0 ; k<len ; k++)
+            {
+                rawId+=raw_class_data[i]+"-";
+                i+=5;
+                rawTitle+=raw_class_data[j]+"-";
+                j+=5;
 
+            }
+            ids = rawId.split("-");
+            titles = rawTitle.split("-");
+            String[] temp = titles[len-1].split("_");
+            titles[len-1] = temp[0];
         }
-        ids = rawId.split("-");
-        titles = rawTitle.split("-");
-        String[] temp = titles[len-1].split("_");
-        titles[len-1] = temp[0];
+
         grid = findViewById(R.id.controller_classes);
         Con_grid_adapter con_grid_adapter = new Con_grid_adapter(Controller_account.this,titles,ids);
         grid.setAdapter(con_grid_adapter);

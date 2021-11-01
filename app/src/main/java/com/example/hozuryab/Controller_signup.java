@@ -56,7 +56,7 @@ public class Controller_signup extends AppCompatActivity  {
 
                     try {
                         String res = s.get();
-                        if(res.equals("y"))
+                        if(res.contains("o"))
                         {
                             try{
                                 final String TESTSTRING = cusername.getText().toString();
@@ -70,7 +70,7 @@ public class Controller_signup extends AppCompatActivity  {
                                 osw.close();
 
                             }catch (Exception e){ }
-                            Intent i = new Intent(ctx,Controller_account.class);
+                            Intent i = new Intent(ctx,MainActivity.class);
                             startActivity(i);
                             Toast.makeText(getApplication(),"با موفقیت ثبتنام کردید !",Toast.LENGTH_SHORT).show();
                         }else Toast.makeText(getApplication(),"نام کاربری قبلا انتخاب شده است !",Toast.LENGTH_SHORT).show();

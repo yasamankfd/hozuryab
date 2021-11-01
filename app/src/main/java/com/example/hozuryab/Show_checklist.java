@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.widget.GridView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -126,5 +127,12 @@ public class Show_checklist extends AppCompatActivity {
             return res;
         }
     }
-
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK ) {
+            Intent i = new Intent(Show_checklist.this,view_class.class);
+            i.putExtra("id",Id);
+            startActivity(i);
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 }

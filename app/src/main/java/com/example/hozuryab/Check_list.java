@@ -2,8 +2,10 @@ package com.example.hozuryab;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.widget.GridView;
 
 import java.io.BufferedReader;
@@ -150,5 +152,19 @@ public class Check_list extends AppCompatActivity {
             }
             return res;
         }
+    }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK && mode.equals("first time")) {
+            Intent i = new Intent(Check_list.this,view_class.class);
+            i.putExtra("id",classid);
+            startActivity(i);
+        }else{
+            Intent i = new Intent(Check_list.this,Show_checklist.class);
+            i.putExtra("classid",classid);
+            i.putExtra("date",sdate);
+            startActivity(i);
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

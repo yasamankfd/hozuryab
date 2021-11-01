@@ -1,8 +1,10 @@
 package com.example.hozuryab;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -196,5 +198,13 @@ public class Controller_profile extends AppCompatActivity {
         protected void onPostExecute(Object o) {
             super.onPostExecute(o);
         }
+    }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            Intent i = new Intent(ctx,Controller_account.class);
+            startActivity(i);
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

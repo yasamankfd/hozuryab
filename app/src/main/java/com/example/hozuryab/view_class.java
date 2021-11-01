@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
@@ -28,13 +29,14 @@ public class view_class extends AppCompatActivity {
     GridView sessions;
     Button new_session , attendees_list , add_attendee;
 
+    Bundle b;
     String Id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_class);
 
-        Bundle b = getIntent().getExtras();
+        b = getIntent().getExtras();
         Id = b.getString("id");
         id = findViewById(R.id.class_id_info);
         title = findViewById(R.id.class_title_info);
@@ -206,5 +208,12 @@ public class view_class extends AppCompatActivity {
             }
             return res;
         }
+    }
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK ) {
+            Intent i = new Intent(view_class.this,Controller_account.class);
+            startActivity(i);
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

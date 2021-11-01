@@ -2,6 +2,7 @@ package com.example.hozuryab;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -28,6 +29,7 @@ public class New_Class extends AppCompatActivity {
     Button submit;
     String CLASS_CREATION_URL = "http://194.5.195.193/create_class.php";
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,55 +45,47 @@ public class New_Class extends AppCompatActivity {
         submit = findViewById(R.id.submit_class);
         cid = findViewById(R.id.controller_id);
 
-        place.setOnClickListener(view -> place.setText(""));
-        id.setOnClickListener(view -> id.setText(""));
-        title.setOnClickListener(view -> title.setText(""));
+        submit.setOnClickListener(view -> {
 
-        submit.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.M)
-            @Override
-            public void onClick(View view) {
+            if(id.length()<1 | title.length()<1 | place.length()<1 | cid.length()<1)
+            {
+                Toast.makeText(getApplication(),"لطفا تمام فیلد ها را پر کنید !",Toast.LENGTH_SHORT).show();
+            }else {
+                String starting_date = startDate.getYear()+"-"+startDate.getMonth()+"-"+startDate.getDayOfMonth();
+                String ending_date = endDate.getYear()+"-"+endDate.getMonth()+"-"+endDate.getDayOfMonth();
 
-                if(id.length()<1 | title.length()<1 | place.length()<1 | cid.length()<1)
-                {
-                    Toast.makeText(getApplication(),"لطفا تمام فیلد ها را پر کنید !",Toast.LENGTH_SHORT).show();
-                }else {
-                    String starting_date = startDate.getYear()+"-"+startDate.getMonth()+"-"+startDate.getDayOfMonth();
-                    String ending_date = endDate.getYear()+"-"+endDate.getMonth()+"-"+endDate.getDayOfMonth();
-
-                    String starting_time = startTime.getHour()+":"+startTime.getMinute()+":00";
-                    String ending_time = endTime.getHour()+":"+endTime.getMinute()+":00";
+                String starting_time = startTime.getHour()+":"+startTime.getMinute()+":00";
+                String ending_time = endTime.getHour()+":"+endTime.getMinute()+":00";
 
 
-                    System.out.println("----------------------------------------start time = "+starting_time);
-                    System.out.println("----------------------------------------end time = "+ending_time);
-                    System.out.println("----------------------------------------start date = "+starting_date);
-                    System.out.println("----------------------------------------end date = "+ending_date);
+                System.out.println("----------------------------------------start time = "+starting_time);
+                System.out.println("----------------------------------------end time = "+ending_time);
+                System.out.println("----------------------------------------start date = "+starting_date);
+                System.out.println("----------------------------------------end date = "+ending_date);
 
 
-                    create_class createClass = new create_class(cid.getText().toString(),id.getText().toString(),title.getText().toString(),starting_time,starting_date,ending_time,ending_date,place.getText().toString());
+                create_class createClass = new create_class(cid.getText().toString(),id.getText().toString(),title.getText().toString(),starting_time,ending_time,starting_date,ending_date,place.getText().toString());
 
-                    createClass.execute();
+                createClass.execute();
 
-                    try {
-                        String res = createClass.get();
-                        System.out.println("reeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeees   "+res);
-                        if (res.contains("o")) {
+                try {
+                    String res = createClass.get();
+                    System.out.println("reeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeees   "+res);
+                    if (res.contains("o")) {
+                        Intent i = new Intent(ctx,Controller_account.class);
+                        startActivity(i);
 
-                            Toast.makeText(getApplication(), "کلاس با موفقیت ثبت شد !", Toast.LENGTH_SHORT).show();
-                        } else Toast.makeText(getApplication(), "مشکلی پیش امد دوباره امتحان کنید !", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplication(), "کلاس با موفقیت ثبت شد !", Toast.LENGTH_SHORT).show();
+                    } else Toast.makeText(getApplication(), "مشکلی پیش امد دوباره امتحان کنید !", Toast.LENGTH_SHORT).show();
 
-                    } catch (ExecutionException e) {
-                        e.printStackTrace();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
             }
-        } );
-
+        });
     }
-
     class create_class extends AsyncTask<Object,Object,String>
     {
         String id , cid;
@@ -119,6 +113,7 @@ public class New_Class extends AppCompatActivity {
             try{
                 String data = "id=" + URLEncoder.encode(id,"UTF-8")
                         +"&"+"title="+title+"&"+"place="+place+"&"+"stime="+stime+"&"+"etime="+etime+"&"+"sdate="+sdate+"&"+"edate="+edate+"&"+"cid="+cid;
+                System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@->\n"+data);
                 URL url = new URL(CLASS_CREATION_URL);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 conn.setRequestMethod("POST");

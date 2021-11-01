@@ -45,8 +45,6 @@ public class add_attendee_to_class extends AppCompatActivity {
                 String res = addAttendee.get().toString();
                 if(res.contains("o"))
                 {
-                    Intent intent = new Intent(add_attendee_to_class.this,view_class.class);
-                    startActivity(intent);
                     Toast.makeText(getApplication(), "به کلاس اضافه شد !", Toast.LENGTH_SHORT).show();
                 }else if(res.contains("n")){ Toast.makeText(getApplication(), "عملیات انجام نشد !", Toast.LENGTH_SHORT).show();}else { Toast.makeText(getApplication(), "مشکلی بوجود امد !", Toast.LENGTH_SHORT).show(); }
             } catch (InterruptedException e) {

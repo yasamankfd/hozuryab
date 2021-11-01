@@ -112,8 +112,8 @@ public class Attendee_signup extends AppCompatActivity  {
                             osw.close();
 
                         }catch (Exception e){ }
-                        //Intent i = new Intent(ctx,Controller_account.class);
-                        //startActivity(i);
+                        Intent i = new Intent(ctx,MainActivity.class);
+                        startActivity(i);
                         Toast.makeText(getApplication(),"با موفقیت ثبتنام کردید!",Toast.LENGTH_SHORT).show();
                     }else Toast.makeText(getApplication(),"نام کاربری قبلا انتخاب شده !",Toast.LENGTH_SHORT).show();
                 } catch (ExecutionException e) {
@@ -122,12 +122,7 @@ public class Attendee_signup extends AppCompatActivity  {
                     e.printStackTrace();
                 }
             }
-
         });
-
-
-
-
     }
     public class sendDataToServer extends AsyncTask<Object,Object,String>{
 

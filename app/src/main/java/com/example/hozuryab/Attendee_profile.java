@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Base64;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -152,10 +153,10 @@ public class Attendee_profile extends AppCompatActivity {
         ArrayAdapter<String> arrayAdapter1 = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item ,arrayList2);
         arrayAdapter1.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         d.setAdapter(arrayAdapter1);
-        ArrayAdapter<String> arrayAdapter2 = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item ,arrayList1);
+        ArrayAdapter<String> arrayAdapter2 = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item ,arrayList3);
         arrayAdapter2.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         m.setAdapter(arrayAdapter2);
-        ArrayAdapter<String> arrayAdapter3 = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item ,arrayList3);
+        ArrayAdapter<String> arrayAdapter3 = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item ,arrayList1);
         arrayAdapter3.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         y.setAdapter(arrayAdapter3);
 
@@ -178,13 +179,13 @@ public class Attendee_profile extends AppCompatActivity {
             response = data.split("\"");
 
             uname.setText(response[3]);
-            name.setText(response[15]);
-            lname.setText(response[23]);
+            name.setText(response[23]);
+            lname.setText(response[15]);
             phone.setText(response[59]);
             System.out.println("{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{  "+response[51]);
             String[] birthdate = response[51].split("-");
             y.setPrompt(birthdate[0]);
-            Integer yyy= Integer.parseInt(birthdate[0])-621;
+            Integer yyy= Integer.parseInt(birthdate[0]);
             String ss = yyy.toString();
             yy.setText(ss);
             m.setPrompt(birthdate[1]);
@@ -388,4 +389,12 @@ public class Attendee_profile extends AppCompatActivity {
         protected void onPreExecute() { }
     }
 
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            Intent i = new Intent(ctx,Attendee_account.class);
+            startActivity(i);
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 }

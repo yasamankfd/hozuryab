@@ -8,9 +8,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher2"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher2_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Hozuryab"
         android:usesCleartextTraffic="true">
@@ -34,9 +34,6 @@
             android:exported="false" />
         <activity
             android:name=".add_attendee_to_class"
-            android:exported="false" />
-        <activity
-            android:name=".New_session"
             android:exported="false" />
         <activity
             android:name=".View_attendees_for_controller"
