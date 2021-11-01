@@ -15,6 +15,7 @@
     <string name="attendee">شرکت کننده</string>
     <string name="controller">مسئول</string>
     <string name="year">سال</string>
+    <string name="controllers">مدیران کلاس</string>
     <string name="title_activity_controller_account">Controller_account</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

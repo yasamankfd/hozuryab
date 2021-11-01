@@ -76,26 +76,23 @@ public class Controller_profile extends AppCompatActivity {
         name.setText(response[15]);
         lname.setText(response[23]);
         email.setText(response[39]);
-        edit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(name.length()<1 | lname.length()<1 | email.length()<1 )
-                {
-                    Toast.makeText(getApplication(),"لطفا تمام فیلد ها را پر کنید !",Toast.LENGTH_SHORT).show();
-                }else {
-                    edit_profile e = new edit_profile(ctx,name.getText().toString(),lname.getText().toString(),uname.getText().toString(),email.getText().toString());
-                    e.execute();
-                    try {
-                        String res = e.get();
-                        if(res.contains("y"))
-                        {
-                            Toast.makeText(getApplication(),"اطلاعات با موفقیت ویرایش شد !",Toast.LENGTH_SHORT).show();
-                        }else Toast.makeText(getApplication(),"مشکلی پیش امد دوباره امتحان کنید !"+res,Toast.LENGTH_SHORT).show();
-                    } catch (ExecutionException ee) {
-                        ee.printStackTrace();
-                    } catch (InterruptedException ee) {
-                        ee.printStackTrace();
-                    }
+        edit.setOnClickListener(view -> {
+            if(name.length()<1 | lname.length()<1 | email.length()<1 )
+            {
+                Toast.makeText(getApplication(),"لطفا تمام فیلد ها را پر کنید !",Toast.LENGTH_SHORT).show();
+            }else {
+                edit_profile e = new edit_profile(ctx,name.getText().toString(),lname.getText().toString(),uname.getText().toString(),email.getText().toString());
+                e.execute();
+                try {
+                    String res = e.get();
+                    if(res.contains("y"))
+                    {
+                        Toast.makeText(getApplication(),"اطلاعات با موفقیت ویرایش شد !",Toast.LENGTH_SHORT).show();
+                    }else Toast.makeText(getApplication(),"مشکلی پیش امد دوباره امتحان کنید !"+res,Toast.LENGTH_SHORT).show();
+                } catch (ExecutionException ee) {
+                    ee.printStackTrace();
+                } catch (InterruptedException ee) {
+                    ee.printStackTrace();
                 }
             }
         });
