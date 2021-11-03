@@ -2,8 +2,10 @@ package com.example.hozuryab;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -91,5 +93,14 @@ public class view_controller_for_attendee extends AppCompatActivity {
             }
             return res;
         }
+    }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            Intent i = new Intent(this,Attendee_account.class);
+            startActivity(i);
+            finish();
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

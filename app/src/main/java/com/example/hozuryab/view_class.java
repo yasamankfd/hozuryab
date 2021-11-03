@@ -14,6 +14,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -27,7 +28,7 @@ public class view_class extends AppCompatActivity {
     String[] sessions_list;
     TextView id , title , st , et , sd,ed ,place;
     GridView sessions;
-    Button new_session , attendees_list , add_attendee;
+    Button new_session , attendees_list , add_attendee,add_controller;
 
     Bundle b;
     String Id;
@@ -49,7 +50,13 @@ public class view_class extends AppCompatActivity {
         sessions = findViewById(R.id.sessions_grid);
         attendees_list = findViewById(R.id.attendees_list);
         add_attendee = findViewById(R.id.add_attendees);
+        add_controller = findViewById(R.id.add_controller);
 
+        add_controller.setOnClickListener(view -> {
+            Intent i = new Intent(view_class.this,Add_controller_to_class.class);
+            i.putExtra("classid",id.getText().toString());
+            startActivity(i);
+        });
 
         add_attendee.setOnClickListener(view -> {
             Intent i = new Intent(view_class.this,add_attendee_to_class.class);
@@ -118,12 +125,10 @@ public class view_class extends AppCompatActivity {
             i.putExtra("classid",Id);
             i.putExtra("date",sessions_list[i1]);
             startActivity(i);
+            finish();
 
                 }
         );
-
-
-
     }
 
     class get_class extends AsyncTask {
@@ -209,10 +214,12 @@ public class view_class extends AppCompatActivity {
             return res;
         }
     }
+    @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK ) {
-            Intent i = new Intent(view_class.this,Controller_account.class);
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            Intent i = new Intent(this,Controller_account.class);
             startActivity(i);
+            finish();
         }
         return super.onKeyDown(keyCode, event);
     }

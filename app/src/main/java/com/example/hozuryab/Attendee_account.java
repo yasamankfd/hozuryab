@@ -7,9 +7,11 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
+import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -103,6 +105,12 @@ public class Attendee_account extends AppCompatActivity {
                     startActivity(i1);
                     return true;
                 case R.id.nav_attendee_contact:
+                    Intent intent2 = new Intent(Intent.ACTION_SENDTO);
+                    intent2.setData(Uri.parse("mailto:"));
+                    intent2.putExtra(Intent.EXTRA_EMAIL, new String[]{"yas003@gmail.com"});
+                    intent2.putExtra(Intent.EXTRA_SUBJECT, "Your subject here...");
+                    intent2.putExtra(Intent.EXTRA_TEXT,"Your message here...");
+                    startActivity(intent2);
                     return true;
 
                 case R.id.nav_attendee_logout:
@@ -121,6 +129,7 @@ public class Attendee_account extends AppCompatActivity {
             intent.putExtra("classid",id);
             intent.putExtra("aid",user);
             startActivity(intent);
+            finish();
 
         });
 
@@ -179,6 +188,12 @@ public class Attendee_account extends AppCompatActivity {
             return res;
         }
     }
-
-
+//    @Override
+//    public boolean onKeyDown(int keyCode, KeyEvent event) {
+//        if (keyCode == KeyEvent.KEYCODE_BACK) {
+//            Intent i = new Intent(ctx,MainActivity.class);
+//            startActivity(i);
+//        }
+//        return super.onKeyDown(keyCode, event);
+//    }
 }

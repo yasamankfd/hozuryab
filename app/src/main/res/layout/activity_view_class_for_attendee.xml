@@ -31,6 +31,7 @@
                     android:layout_width="80dp"
                     android:layout_height="50dp"
                     android:textSize="17sp"
+                    android:paddingTop="8dp"
                     android:text="@string/class_id"
                     android:background="@drawable/round_textview"/>
 
@@ -39,8 +40,11 @@
                     android:layout_height="match_parent"/>
                 <TextView
                     android:id="@+id/class_id_info_attendee"
-                    android:layout_width="320dp"
-                    android:layout_height="50dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingRight="7dp"
+                    android:paddingLeft="7dp"
+                    android:paddingTop="13dp"
                     android:background="@drawable/round_textview"/>
 
             </LinearLayout>
@@ -61,6 +65,7 @@
                     android:layout_height="50dp"
                     android:textSize="17sp"
                     android:text="@string/class_title"
+                    android:paddingTop="8dp"
                     android:background="@drawable/round_textview"/>
                 <TextView
                     android:layout_width="10dp"
@@ -69,8 +74,11 @@
                 <TextView
                     android:id="@+id/class_title_info_attendee"
                     android:layout_width="match_parent"
-                    android:layout_height="39dp"
+                    android:layout_height="match_parent"
                     android:textSize="17sp"
+                    android:paddingRight="7dp"
+                    android:paddingTop="13dp"
+                    android:paddingLeft="7dp"
                     android:background="@drawable/round_textview"/>
 
             </LinearLayout>
@@ -91,6 +99,8 @@
                     android:layout_height="50dp"
                     android:textSize="17sp"
                     android:text="@string/place"
+                    android:paddingRight="24dp"
+                    android:paddingTop="9dp"
                     android:background="@drawable/round_textview"/>
 
 
@@ -102,6 +112,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textSize="17sp"
+                    android:paddingRight="7dp"
+                    android:paddingLeft="7dp"
+                    android:paddingTop="13dp"
                     android:background="@drawable/round_textview"/>
             </LinearLayout>
             <TextView
@@ -118,28 +131,36 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="54dp"
+                android:layout_height="50dp"
                 android:orientation="horizontal"
                 android:textSize="17sp">
 
                 <TextView
                     android:id="@+id/class_stime_info_attendee"
                     android:layout_width="185dp"
-                    android:layout_height="40dp"
+                    android:layout_height="match_parent"
                     android:textSize="17sp"
+                    android:paddingRight="7dp"
+                    android:paddingLeft="7dp"
+                    android:paddingTop="13dp"
                     android:background="@drawable/round_textview"/>
 
                 <TextView
                     android:layout_width="30dp"
                     android:layout_height="40dp"
                     android:text="@string/to"
+                    android:paddingLeft="6dp"
+                    android:paddingTop="7dp"
                     android:textSize="17sp"/>
 
                 <TextView
                     android:id="@+id/class_etime_info_attendee"
                     android:layout_width="185dp"
-                    android:layout_height="40dp"
+                    android:layout_height="match_parent"
                     android:textSize="17sp"
+                    android:paddingTop="13dp"
+                    android:paddingRight="7dp"
+                    android:paddingLeft="7dp"
                     android:background="@drawable/round_textview"/>
 
             </LinearLayout>
@@ -159,22 +180,30 @@
                 <TextView
                     android:id="@+id/class_sdate_info_attendee"
                     android:layout_width="185dp"
-                    android:layout_height="40dp"
+                    android:layout_height="match_parent"
                     android:textSize="17sp"
+                    android:paddingTop="13dp"
+                    android:paddingRight="7dp"
+                    android:paddingLeft="7dp"
                     android:background="@drawable/round_textview"/>
 
                 <TextView
                     android:layout_width="30dp"
                     android:layout_height="40dp"
                     android:text="@string/to"
+                    android:paddingLeft="6dp"
+                    android:paddingTop="7dp"
                     android:textSize="17sp"
                     tools:ignore="HardcodedText" />
 
                 <TextView
                     android:id="@+id/class_edate_info_attendee"
                     android:layout_width="185dp"
-                    android:layout_height="40dp"
+                    android:layout_height="match_parent"
                     android:textSize="17sp"
+                    android:paddingTop="13dp"
+                    android:paddingRight="7dp"
+                    android:paddingLeft="7dp"
                     android:background="@drawable/round_textview"/>
 
             </LinearLayout>
@@ -194,6 +223,7 @@
                 android:layout_height="55dp"
                 android:layout_gravity="center"
                 android:text="@string/controllers"
+                android:paddingTop="12dp"
                 android:textSize="25sp"/>
 
             <GridView

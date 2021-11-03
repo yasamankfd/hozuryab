@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Switch;
@@ -75,16 +76,15 @@ import java.util.concurrent.ExecutionException;
                      FileOutputStream fOut = openFileOutput("hozuryab_data_aten.txt", MODE_PRIVATE);
                      OutputStreamWriter osw = new OutputStreamWriter(fOut);
 
-
                      System.out.println("befoooorrrreeeeeeeee    -> "+username);
                      osw.write(TESTSTRING+"!");
-
                      osw.flush();
                      osw.close();
 
                  }catch (Exception e){ }
                  Intent intent = new Intent(this, Attendee_account.class);
                  startActivity(intent);
+                 finish();
                  Toast.makeText(getApplication(), "با موفقیت وارد شدید !", Toast.LENGTH_SHORT).show();
              }else Toast.makeText(getApplication(), "نام کاربری یا رمزعبور اشتباه است !", Toast.LENGTH_SHORT).show();
 
@@ -102,16 +102,14 @@ import java.util.concurrent.ExecutionException;
 
                      FileOutputStream fOut = openFileOutput("hozuryab_data_con.txt", MODE_PRIVATE);
                      OutputStreamWriter osw = new OutputStreamWriter(fOut);
-
-
                      osw.write(TESTSTRING+"!");
-
                      osw.flush();
                      osw.close();
 
                  }catch (Exception e){ }
                  Intent intent = new Intent(this, Controller_account.class);
                  startActivity(intent);
+                 finish();
                  Toast.makeText(getApplication(), "با موفقیت وارد شدید !", Toast.LENGTH_SHORT).show();
              }else Toast.makeText(getApplication(), "نام کاربری یا رمزعبور اشتباه است !", Toast.LENGTH_SHORT).show();
 
@@ -120,17 +118,22 @@ import java.util.concurrent.ExecutionException;
          public void sign_up (){
 
              if (Type) {
-                 System.out.println("{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{");
                  Intent intent = new Intent(this, Attendee_signup.class);
                  startActivity(intent);
+                 finish();
 
              } else {
-                 System.out.println("}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}");
                  Intent intent = new Intent(this, Controller_signup.class);
                  startActivity(intent);
+                 finish();
              }
          }
-
-
+     @Override
+     public boolean onKeyDown(int keyCode, KeyEvent event) {
+         if (keyCode == KeyEvent.KEYCODE_BACK) {
+             finish();
+         }
+         return super.onKeyDown(keyCode, event);
+     }
  }
 

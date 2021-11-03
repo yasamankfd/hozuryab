@@ -159,11 +159,13 @@ public class Check_list extends AppCompatActivity {
             Intent i = new Intent(Check_list.this,view_class.class);
             i.putExtra("id",classid);
             startActivity(i);
+            finish();
         }else{
             Intent i = new Intent(Check_list.this,Show_checklist.class);
             i.putExtra("classid",classid);
             i.putExtra("date",sdate);
             startActivity(i);
+            finish();
         }
         return super.onKeyDown(keyCode, event);
     }

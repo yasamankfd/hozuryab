@@ -104,6 +104,7 @@ public class view_class_for_attendee extends AppCompatActivity {
             Intent intent = new Intent(view_class_for_attendee.this, view_controller_for_attendee.class);
             intent.putExtra("cid",id);
             startActivity(intent);
+            finish();
         });
 
     }

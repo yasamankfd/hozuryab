@@ -30,14 +30,14 @@
                 android:id="@+id/class_title"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:textSize="20sp"
                 android:background="@drawable/round_textview"
                 android:hint="@string/class_title"
+                android:textSize="20sp"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="5dp"/>
+                android:layout_height="5dp" />
 
             <EditText
                 android:id="@+id/class_id"
@@ -50,7 +50,7 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="5dp"/>
+                android:layout_height="5dp" />
 
             <EditText
                 android:id="@+id/place"
@@ -60,9 +60,10 @@
                 android:hint="@string/place"
                 android:textSize="20sp"
                 tools:ignore="TouchTargetSizeCheck" />
+
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="5dp"/>
+                android:layout_height="5dp" />
 
             <EditText
                 android:id="@+id/controller_id"
@@ -72,16 +73,17 @@
                 android:hint="@string/username"
                 android:textSize="20sp"
                 tools:ignore="TouchTargetSizeCheck" />
+
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="5dp"/>
+                android:layout_height="5dp" />
 
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="ساعت شروع"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
 
             <TimePicker
                 android:id="@+id/end_time"
@@ -95,7 +97,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="ساعت پایان"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
 
 
             <TimePicker
@@ -110,37 +112,37 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="تاریخ شروع"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
 
             <DatePicker
                 android:id="@+id/start_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:datePickerMode="calendar"
                 android:layout_gravity="center"
-                android:background="@drawable/round_textview"/>
+                android:background="@drawable/round_textview"
+                android:datePickerMode="calendar" />
 
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="تاریخ پایان"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
 
             <DatePicker
                 android:id="@+id/end_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:background="@drawable/round_textview"
-                android:datePickerMode="calendar"
-                android:layout_gravity="center"/>
+                android:datePickerMode="calendar" />
 
             <Button
                 android:id="@+id/submit_class"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@string/submit"
-                android:background="@drawable/round_textview"/>
+                android:background="@drawable/round_textview"
+                android:text="@string/submit" />
 
         </LinearLayout>
 

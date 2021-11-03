@@ -44,6 +44,7 @@ public class Show_checklist extends AppCompatActivity {
             i.putExtra("date",sDate);
             i.putExtra("mode","editing");
             startActivity(i);
+            finish();
         });
 
         get_attendees getAttendees = new get_attendees(Id,sDate);
@@ -127,11 +128,13 @@ public class Show_checklist extends AppCompatActivity {
             return res;
         }
     }
+    @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK ) {
-            Intent i = new Intent(Show_checklist.this,view_class.class);
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            Intent i = new Intent(this,view_class.class);
             i.putExtra("id",Id);
             startActivity(i);
+            finish();
         }
         return super.onKeyDown(keyCode, event);
     }

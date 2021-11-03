@@ -4,29 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".add_attendee_to_class"
+    tools:context=".Add_controller_to_class"
     android:background="@drawable/round_background">
 
     <Button
-        android:id="@+id/add_to_class"
+        android:id="@+id/addc_to_class"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/add_to_class"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/attendee_id_to_add_to_class" />
+        app:layout_constraintTop_toBottomOf="@+id/controller_id_to_add_to_class" />
 
     <EditText
-        android:id="@+id/attendee_id_to_add_to_class"
+        android:id="@+id/controller_id_to_add_to_class"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:padding="5dp"
+        android:layout_height="55dp"
+        android:paddingRight="7dp"
+        android:paddingLeft="7dp"
         android:layout_marginBottom="30dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="@string/attendee_id"
-        app:layout_constraintBottom_toTopOf="@+id/add_to_class"
+        app:layout_constraintBottom_toTopOf="@+id/addc_to_class"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

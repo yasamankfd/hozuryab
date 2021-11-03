@@ -6,11 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.GridView;
 import com.google.android.material.navigation.NavigationView;
 import java.io.BufferedReader;
@@ -69,6 +69,12 @@ public class Controller_account extends AppCompatActivity {
                     startActivity(i);
                     return true;
                 case R.id.nav_controller_contact:
+                    Intent intent2 = new Intent(Intent.ACTION_SENDTO);
+                    intent2.setData(Uri.parse("mailto:"));
+                    intent2.putExtra(Intent.EXTRA_EMAIL, new String[]{"yas003@gmail.com"});
+                    intent2.putExtra(Intent.EXTRA_SUBJECT, "Your subject here...");
+                    intent2.putExtra(Intent.EXTRA_TEXT,"Your message here...");
+                    startActivity(intent2);
                     return true;
 
                 case R.id.nav_controller_logout:
@@ -76,8 +82,8 @@ public class Controller_account extends AppCompatActivity {
                     startActivity(intent);
                     return true;
                 case R.id.nav_controller_newClass:
-                    Intent intent2 = new Intent(ctx, New_Class.class);
-                    startActivity(intent2);
+                    Intent intent3 = new Intent(ctx, New_Class.class);
+                    startActivity(intent3);
                     return true;
             }
             return false;
@@ -126,7 +132,7 @@ public class Controller_account extends AppCompatActivity {
             Intent intent = new Intent(Controller_account.this, view_class.class);
             intent.putExtra("id",id);
             startActivity(intent);
-
+            this.finish();
         });
     }
 
@@ -179,4 +185,13 @@ public class Controller_account extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            Intent i = new Intent(ctx,MainActivity.class);
+            startActivity(i);
+            finish();
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 }

@@ -25,10 +25,13 @@
 
 
                 <TextView
-                    android:layout_width="80dp"
+                    android:layout_width="90dp"
                     android:layout_height="50dp"
                     android:text="@string/class_id"
                     android:textSize="17sp"
+                    android:paddingRight="3dp"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp"
                     android:background="@drawable/round_textview"/>
 
                 <TextView
@@ -39,6 +42,10 @@
                     android:id="@+id/class_id_info"
                     android:layout_width="320dp"
                     android:layout_height="50dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp"
                     android:background="@drawable/round_textview"/>
 
             </LinearLayout>
@@ -56,10 +63,13 @@
 
 
                 <TextView
-                    android:layout_width="80dp"
+                    android:layout_width="90dp"
                     android:layout_height="50dp"
                     android:text="@string/class_title"
                     android:textSize="17sp"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="3dp"
                     android:background="@drawable/round_textview"/>
 
                 <TextView
@@ -71,6 +81,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textSize="17sp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp"
                     android:background="@drawable/round_textview"/>
 
             </LinearLayout>
@@ -90,6 +104,9 @@
                     android:layout_width="80dp"
                     android:layout_height="50dp"
                     android:text="@string/place"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="20dp"
                     android:textSize="17sp"
                     android:background="@drawable/round_textview"/>
 
@@ -103,6 +120,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textSize="17sp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp"
                     android:background="@drawable/round_textview"/>
             </LinearLayout>
 
@@ -116,6 +137,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/hour"
+                android:paddingRight="190dp"
                 android:textSize="17sp" />
 
             <LinearLayout
@@ -128,6 +150,10 @@
                     android:id="@+id/class_stime_info"
                     android:layout_width="185dp"
                     android:layout_height="40dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp"
                     android:textSize="17sp"
                     android:background="@drawable/round_textview"/>
 
@@ -135,12 +161,17 @@
                     android:layout_width="30dp"
                     android:layout_height="40dp"
                     android:text="@string/to"
+                    android:paddingLeft="8dp"
                     android:textSize="17sp" />
 
                 <TextView
                     android:id="@+id/class_etime_info"
                     android:layout_width="185dp"
                     android:layout_height="40dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp"
                     android:textSize="17sp"
                     android:background="@drawable/round_textview"/>
 
@@ -150,6 +181,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/date"
+                android:paddingRight="190dp"
                 android:textSize="17sp" />
 
 
@@ -163,18 +195,27 @@
                     android:layout_width="185dp"
                     android:layout_height="40dp"
                     android:textSize="17sp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp"
                     android:background="@drawable/round_textview"/>
 
                 <TextView
                     android:layout_width="30dp"
                     android:layout_height="40dp"
                     android:text="@string/to"
+                    android:paddingLeft="8dp"
                     android:textSize="17sp" />
 
                 <TextView
                     android:id="@+id/class_edate_info"
                     android:layout_width="185dp"
                     android:layout_height="40dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp"
                     android:textSize="17sp"
                     android:background="@drawable/round_textview"/>
 
@@ -185,36 +226,59 @@
                 android:layout_height="1dp"
                 android:textSize="17sp" />
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="53dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
             <Button
                 android:id="@+id/new_session"
-                android:layout_width="match_parent"
+                android:layout_width="170dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:text="@string/newSession"
                 android:background="@drawable/round_textview"/>
 
             <TextView
-                android:layout_width="185dp"
+                android:layout_width="13dp"
                 android:layout_height="3dp"
                 android:textSize="17sp" />
 
             <Button
                 android:id="@+id/attendees_list"
-                android:layout_width="match_parent"
+                android:layout_width="170dp"
+                android:layout_gravity="center"
                 android:layout_height="wrap_content"
                 android:text="@string/attendeeList"
                 android:background="@drawable/round_textview"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="53dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/add_controller"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:text="@string/addController"
+            android:background="@drawable/round_textview"/>
 
             <TextView
-                android:layout_width="185dp"
+                android:layout_width="13dp"
                 android:layout_height="3dp"
                 android:textSize="17sp" />
 
             <Button
                 android:id="@+id/add_attendees"
-                android:layout_width="match_parent"
+                android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:text="@string/addAttendee"
                 android:background="@drawable/round_textview"/>
+    </LinearLayout>
 
 
             <TextView
@@ -222,6 +286,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/round_textview"
                 android:text="@string/sessions_list"
+                android:paddingRight="160dp"
                 android:textSize="17sp" />
 
             <GridView

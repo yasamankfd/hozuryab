@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -72,6 +73,7 @@ public class Controller_signup extends AppCompatActivity  {
                             }catch (Exception e){ }
                             Intent i = new Intent(ctx,MainActivity.class);
                             startActivity(i);
+                            finish();
                             Toast.makeText(getApplication(),"با موفقیت ثبتنام کردید !",Toast.LENGTH_SHORT).show();
                         }else Toast.makeText(getApplication(),"نام کاربری قبلا انتخاب شده است !",Toast.LENGTH_SHORT).show();
                     } catch (ExecutionException e) {
@@ -139,5 +141,14 @@ public class Controller_signup extends AppCompatActivity  {
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
         }
+    }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            Intent i = new Intent(ctx,MainActivity.class);
+            startActivity(i);
+            finish();
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }
