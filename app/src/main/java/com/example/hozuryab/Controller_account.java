@@ -67,6 +67,7 @@ public class Controller_account extends AppCompatActivity {
                 case R.id.nav_controller_account:
                     Intent i = new Intent(ctx,Controller_profile.class);
                     startActivity(i);
+                    finish();
                     return true;
                 case R.id.nav_controller_contact:
                     Intent intent2 = new Intent(Intent.ACTION_SENDTO);
@@ -80,10 +81,12 @@ public class Controller_account extends AppCompatActivity {
                 case R.id.nav_controller_logout:
                     Intent intent = new Intent(ctx,MainActivity.class);
                     startActivity(intent);
+                    finish();
                     return true;
                 case R.id.nav_controller_newClass:
                     Intent intent3 = new Intent(ctx, New_Class.class);
                     startActivity(intent3);
+                    finish();
                     return true;
             }
             return false;

@@ -93,37 +93,43 @@ public class Attendee_signup extends AppCompatActivity  {
             {
                 Toast.makeText(getApplication(),"لطفا همه فیلدهارا پر کنید !",Toast.LENGTH_SHORT).show();
             }else {
-                String date = y.getSelectedItem().toString()+"-"+m.getSelectedItem().toString()+"-"+d.getSelectedItem().toString();
-                sendDataToServer s = new sendDataToServer(aname.getText().toString(),alname.getText().toString(),apass.getText().toString(),date,ausername.getText().toString(),aphone.getText().toString());
-                s.execute();
+                if(ausername.getText().toString().contains("_") | aname.getText().toString().contains("_") | alname.getText().toString().contains("_") | aphone.getText().toString().contains("_"))
+                {
+                    Toast.makeText(getApplication(),"لطفا در ورودی های خود از  _   استفاده نکنید !",Toast.LENGTH_SHORT).show();
+                }else{
+                    String date = y.getSelectedItem().toString()+"-"+m.getSelectedItem().toString()+"-"+d.getSelectedItem().toString();
+                    sendDataToServer s = new sendDataToServer(aname.getText().toString(),alname.getText().toString(),apass.getText().toString(),date,ausername.getText().toString(),aphone.getText().toString());
+                    s.execute();
 
-                try {
-                    String res = s.get();
-                    if(res.contains("y"))
-                    {
-                        try{
-                            final String TESTSTRING = ausername.getText().toString();
+                    try {
+                        String res = s.get();
+                        if(res.contains("y"))
+                        {
+                            try{
+                                final String TESTSTRING = ausername.getText().toString();
 
-                            FileOutputStream fOut = openFileOutput("hozuryab_data_con.txt", MODE_PRIVATE);
-                            OutputStreamWriter osw = new OutputStreamWriter(fOut);
+                                FileOutputStream fOut = openFileOutput("hozuryab_data_con.txt", MODE_PRIVATE);
+                                OutputStreamWriter osw = new OutputStreamWriter(fOut);
 
-                            osw.write(TESTSTRING+"!");
+                                osw.write(TESTSTRING+"!");
 
-                            osw.flush();
-                            osw.close();
+                                osw.flush();
+                                osw.close();
 
-                        }catch (Exception e){ }
-                        Intent i = new Intent(ctx,MainActivity.class);
-                        startActivity(i);
-                        finish();
-                        Toast.makeText(getApplication(),"با موفقیت ثبتنام کردید!",Toast.LENGTH_SHORT).show();
-                    }else Toast.makeText(getApplication(),"نام کاربری قبلا انتخاب شده !",Toast.LENGTH_SHORT).show();
-                } catch (ExecutionException e) {
-                    e.printStackTrace();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                            }catch (Exception e){ }
+                            Intent i = new Intent(ctx,MainActivity.class);
+                            startActivity(i);
+                            finish();
+                            Toast.makeText(getApplication(),"با موفقیت ثبتنام کردید!",Toast.LENGTH_SHORT).show();
+                        }else Toast.makeText(getApplication(),"نام کاربری قبلا انتخاب شده !",Toast.LENGTH_SHORT).show();
+                    } catch (ExecutionException e) {
+                        e.printStackTrace();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
-            }
+                }
+
         });
     }
     public class sendDataToServer extends AsyncTask<Object,Object,String>{
@@ -187,7 +193,7 @@ public class Attendee_signup extends AppCompatActivity  {
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
-            Intent i = new Intent(ctx,MainActivity.class);
+            Intent i = new Intent(this,MainActivity.class);
             startActivity(i);
             finish();
         }

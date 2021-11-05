@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -51,39 +52,44 @@ public class New_Class extends AppCompatActivity {
             {
                 Toast.makeText(getApplication(),"لطفا تمام فیلد ها را پر کنید !",Toast.LENGTH_SHORT).show();
             }else {
-                String starting_date = startDate.getYear()+"-"+startDate.getMonth()+"-"+startDate.getDayOfMonth();
-                String ending_date = endDate.getYear()+"-"+endDate.getMonth()+"-"+endDate.getDayOfMonth();
+                if(id.getText().toString().contains("_") | title.getText().toString().contains("_") | place.getText().toString().contains("_") | cid.getText().toString().contains("_"))
+                {
+                    Toast.makeText(getApplication(),"لطفا در ورودی های خود از  _   استفاده نکنید !",Toast.LENGTH_SHORT).show();
+                }else{
+                    String starting_date = startDate.getYear()+"-"+startDate.getMonth()+"-"+startDate.getDayOfMonth();
+                    String ending_date = endDate.getYear()+"-"+endDate.getMonth()+"-"+endDate.getDayOfMonth();
 
-                String starting_time = startTime.getHour()+":"+startTime.getMinute()+":00";
-                String ending_time = endTime.getHour()+":"+endTime.getMinute()+":00";
-
-
-                System.out.println("----------------------------------------start time = "+starting_time);
-                System.out.println("----------------------------------------end time = "+ending_time);
-                System.out.println("----------------------------------------start date = "+starting_date);
-                System.out.println("----------------------------------------end date = "+ending_date);
+                    String starting_time = startTime.getHour()+":"+startTime.getMinute()+":00";
+                    String ending_time = endTime.getHour()+":"+endTime.getMinute()+":00";
 
 
-                create_class createClass = new create_class(cid.getText().toString(),id.getText().toString(),title.getText().toString(),starting_time,ending_time,starting_date,ending_date,place.getText().toString());
+                    System.out.println("----------------------------------------start time = "+starting_time);
+                    System.out.println("----------------------------------------end time = "+ending_time);
+                    System.out.println("----------------------------------------start date = "+starting_date);
+                    System.out.println("----------------------------------------end date = "+ending_date);
 
-                createClass.execute();
 
-                try {
-                    String res = createClass.get();
-                    System.out.println("reeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeees   "+res);
-                    if (res.contains("o")) {
-                        Intent i = new Intent(ctx,Controller_account.class);
-                        startActivity(i);
+                    create_class createClass = new create_class(cid.getText().toString(),id.getText().toString(),title.getText().toString(),starting_time,ending_time,starting_date,ending_date,place.getText().toString());
 
-                        Toast.makeText(getApplication(), "کلاس با موفقیت ثبت شد !", Toast.LENGTH_SHORT).show();
-                    } else Toast.makeText(getApplication(), "مشکلی پیش امد دوباره امتحان کنید !", Toast.LENGTH_SHORT).show();
+                    createClass.execute();
 
-                } catch (ExecutionException e) {
-                    e.printStackTrace();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    try {
+                        String res = createClass.get();
+                        System.out.println("reeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeees   "+res);
+                        if (res.contains("o")) {
+                            Intent i = new Intent(ctx,Controller_account.class);
+                            startActivity(i);
+
+                            Toast.makeText(getApplication(), "کلاس با موفقیت ثبت شد !", Toast.LENGTH_SHORT).show();
+                        } else Toast.makeText(getApplication(), "مشکلی پیش امد دوباره امتحان کنید !", Toast.LENGTH_SHORT).show();
+
+                    } catch (ExecutionException e) {
+                        e.printStackTrace();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
-            }
+                }
         });
     }
     class create_class extends AsyncTask<Object,Object,String>
@@ -141,6 +147,15 @@ public class New_Class extends AppCompatActivity {
             }
             return res;
         }
+    }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            Intent i = new Intent(this,Controller_account.class);
+            startActivity(i);
+            finish();
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }
 

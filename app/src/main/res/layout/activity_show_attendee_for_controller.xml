@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,7 +12,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="bottom"
+        android:gravity="center"
         android:orientation="vertical"
         android:layout_marginBottom="0dp">
 
@@ -26,8 +25,9 @@
 
             <TextView
                 android:layout_width="80dp"
-                android:layout_height="50dp"
+                android:layout_height="match_parent"
                 android:text="@string/name"
+                android:gravity="center"
                 android:textSize="17sp"
                 android:background="@drawable/round_textview"/>
 
@@ -37,8 +37,9 @@
 
             <TextView
                 android:id="@+id/aname_in_show_attendee"
-                android:layout_width="320dp"
-                android:layout_height="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
                 android:background="@drawable/round_textview"/>
 
         </LinearLayout>
@@ -57,9 +58,10 @@
 
             <TextView
                 android:layout_width="80dp"
-                android:layout_height="50dp"
+                android:layout_height="match_parent"
                 android:text="@string/last_name"
                 android:textSize="17sp"
+                android:gravity="center"
                 android:background="@drawable/round_textview"/>
 
             <TextView
@@ -71,6 +73,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:textSize="17sp"
+                android:gravity="center"
                 android:background="@drawable/round_textview"/>
 
         </LinearLayout>
@@ -88,9 +91,10 @@
 
             <TextView
                 android:layout_width="80dp"
-                android:layout_height="50dp"
+                android:layout_height="match_parent"
                 android:text="@string/birth_date"
                 android:textSize="17sp"
+                android:gravity="center"
                 android:background="@drawable/round_textview"/>
 
 
@@ -103,6 +107,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:textSize="17sp"
+                android:gravity="center"
                 android:background="@drawable/round_textview"/>
         </LinearLayout>
 
@@ -120,16 +125,17 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="54dp"
             android:orientation="horizontal"
             android:textSize="17sp">
 
             <TextView
                 android:id="@+id/class_stime_info"
                 android:layout_width="80dp"
-                android:layout_height="50dp"
+                android:layout_height="match_parent"
                 android:textSize="17sp"
                 android:text="@string/phone"
+                android:gravity="center"
                 android:background="@drawable/round_textview"/>
 
             <TextView
@@ -141,8 +147,9 @@
             <TextView
                 android:id="@+id/aphone_in_show_attendee"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="match_parent"
                 android:textSize="17sp"
+                android:gravity="center"
                 android:background="@drawable/round_textview"/>
 
         </LinearLayout>
@@ -156,15 +163,16 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="46dp"
+            android:layout_height="54dp"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/class_sdate_info"
                 android:layout_width="80dp"
-                android:layout_height="50dp"
+                android:layout_height="match_parent"
                 android:textSize="17sp"
                 android:text="@string/username"
+                android:gravity="center"
                 android:background="@drawable/round_textview"/>
 
             <TextView
@@ -176,8 +184,9 @@
             <TextView
                 android:id="@+id/uname_show_attendee"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="match_parent"
                 android:textSize="17sp"
+                android:gravity="center"
                 android:background="@drawable/round_textview"/>
 
         </LinearLayout>
@@ -203,9 +212,10 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:background="@drawable/round_textview"
             android:text="@string/sessions_list"
+            android:gravity="center"
             android:textSize="17sp" />
 
         <GridView

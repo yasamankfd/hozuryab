@@ -57,7 +57,7 @@ public class Show_attendee_for_controller extends AppCompatActivity {
             System.out.println("{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{  "+response[51]);
             String[] birthdate = response[51].split("-");
 
-            Integer yyy= Integer.parseInt(birthdate[0])-621;
+            Integer yyy= Integer.parseInt(birthdate[0]);
             String ss = yyy.toString();
             String bdate = ss +"-" + birthdate[1]+"-"+birthdate[2];
             date.setText(bdate);

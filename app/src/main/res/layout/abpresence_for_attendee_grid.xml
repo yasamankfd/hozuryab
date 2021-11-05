@@ -28,6 +28,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         android:text="@string/date"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/textView10"
         app:layout_constraintTop_toTopOf="parent" />
@@ -39,11 +40,12 @@
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
         android:background="@drawable/round_textview"
-        android:paddingLeft="3sp"
-        android:paddingRight="3sp"
+        android:paddingLeft="10sp"
+        android:paddingRight="10sp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         android:text="@string/status"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

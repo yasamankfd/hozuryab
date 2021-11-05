@@ -199,8 +199,9 @@ public class Controller_profile extends AppCompatActivity {
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
-            Intent i = new Intent(ctx,Controller_account.class);
+            Intent i = new Intent(this,Controller_account.class);
             startActivity(i);
+            finish();
         }
         return super.onKeyDown(keyCode, event);
     }

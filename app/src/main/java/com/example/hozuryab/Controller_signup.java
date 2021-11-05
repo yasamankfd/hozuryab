@@ -52,36 +52,42 @@ public class Controller_signup extends AppCompatActivity  {
                 {
                     Toast.makeText(getApplication(),"لطفا تمام فیلد ها را پر کنید !",Toast.LENGTH_SHORT).show();
                 }else {
-                    sendDataToServer s = new sendDataToServer(cname.getText().toString(),clname.getText().toString(),cpass.getText().toString(),cemail.getText().toString(),cusername.getText().toString());
-                    s.execute();
+                    if(cusername.getText().toString().contains("_") | cname.getText().toString().contains("_") | clname.getText().toString().contains("_"))
+                    {
+                        Toast.makeText(getApplication(),"لطفا در ورودی های خود از  _   استفاده نکنید !",Toast.LENGTH_SHORT).show();
+                    }else{
+                        sendDataToServer s = new sendDataToServer(cname.getText().toString(),clname.getText().toString(),cpass.getText().toString(),cemail.getText().toString(),cusername.getText().toString());
+                        s.execute();
 
-                    try {
-                        String res = s.get();
-                        if(res.contains("o"))
-                        {
-                            try{
-                                final String TESTSTRING = cusername.getText().toString();
+                        try {
+                            String res = s.get();
+                            if(res.contains("o"))
+                            {
+                                try{
+                                    final String TESTSTRING = cusername.getText().toString();
 
-                                FileOutputStream fOut = openFileOutput("hozuryab_data_con.txt", MODE_PRIVATE);
-                                OutputStreamWriter osw = new OutputStreamWriter(fOut);
+                                    FileOutputStream fOut = openFileOutput("hozuryab_data_con.txt", MODE_PRIVATE);
+                                    OutputStreamWriter osw = new OutputStreamWriter(fOut);
 
-                                osw.write(TESTSTRING+"!");
+                                    osw.write(TESTSTRING+"!");
 
-                                osw.flush();
-                                osw.close();
+                                    osw.flush();
+                                    osw.close();
 
-                            }catch (Exception e){ }
-                            Intent i = new Intent(ctx,MainActivity.class);
-                            startActivity(i);
-                            finish();
-                            Toast.makeText(getApplication(),"با موفقیت ثبتنام کردید !",Toast.LENGTH_SHORT).show();
-                        }else Toast.makeText(getApplication(),"نام کاربری قبلا انتخاب شده است !",Toast.LENGTH_SHORT).show();
-                    } catch (ExecutionException e) {
-                        e.printStackTrace();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
+                                }catch (Exception e){ }
+                                Intent i = new Intent(ctx,MainActivity.class);
+                                startActivity(i);
+                                finish();
+                                Toast.makeText(getApplication(),"با موفقیت ثبتنام کردید !",Toast.LENGTH_SHORT).show();
+                            }else Toast.makeText(getApplication(),"نام کاربری قبلا انتخاب شده است !",Toast.LENGTH_SHORT).show();
+                        } catch (ExecutionException e) {
+                            e.printStackTrace();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
                     }
-                }
+                    }
+
 
             }
         });
@@ -145,7 +151,7 @@ public class Controller_signup extends AppCompatActivity  {
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
-            Intent i = new Intent(ctx,MainActivity.class);
+            Intent i = new Intent(this,MainActivity.class);
             startActivity(i);
             finish();
         }

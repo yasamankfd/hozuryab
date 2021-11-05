@@ -10,7 +10,8 @@
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
+        android:gravity="center"
         android:layout_marginBottom="17dp"
         android:text="@string/session_date"
         app:layout_constraintBottom_toTopOf="@+id/session_date_"

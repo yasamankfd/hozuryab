@@ -4,26 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".New_Class"
     android:background="@drawable/round_background">
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+
         app:layout_constraintVertical_bias="1.0">
 
 
         <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_margin="7dp"
+            android:paddingBottom="30dp"
+            android:gravity="center"
             android:orientation="vertical">
 
             <EditText
@@ -32,6 +36,9 @@
                 android:layout_height="50dp"
                 android:background="@drawable/round_textview"
                 android:hint="@string/class_title"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:gravity="center"
                 android:textSize="20sp"
                 tools:ignore="TouchTargetSizeCheck" />
 
@@ -45,6 +52,9 @@
                 android:layout_height="50dp"
                 android:background="@drawable/round_textview"
                 android:hint="@string/class_id"
+                android:gravity="center"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
                 android:textSize="20sp"
                 tools:ignore="TouchTargetSizeCheck" />
 
@@ -58,6 +68,9 @@
                 android:layout_height="50dp"
                 android:background="@drawable/round_textview"
                 android:hint="@string/place"
+                android:gravity="center"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
                 android:textSize="20sp"
                 tools:ignore="TouchTargetSizeCheck" />
 
@@ -71,7 +84,10 @@
                 android:layout_height="50dp"
                 android:background="@drawable/round_textview"
                 android:hint="@string/username"
+                android:gravity="center"
                 android:textSize="20sp"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <TextView
@@ -82,7 +98,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="ساعت شروع"
+                android:text="@string/stime"
+                android:gravity="center"
                 android:textSize="20sp" />
 
             <TimePicker
@@ -96,7 +113,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="ساعت پایان"
+                android:text="@string/etime"
+                android:gravity="center"
                 android:textSize="20sp" />
 
 
@@ -111,7 +129,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="تاریخ شروع"
+                android:text="@string/sdate"
+                android:gravity="center"
                 android:textSize="20sp" />
 
             <DatePicker
@@ -126,7 +145,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="تاریخ پایان"
+                android:text="@string/edate"
+                android:gravity="center"
                 android:textSize="20sp" />
 
             <DatePicker
@@ -137,10 +157,16 @@
                 android:background="@drawable/round_textview"
                 android:datePickerMode="calendar" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
             <Button
                 android:id="@+id/submit_class"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp"
                 android:background="@drawable/round_textview"
                 android:text="@string/submit" />
 

@@ -392,8 +392,9 @@ public class Attendee_profile extends AppCompatActivity {
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
-            Intent i = new Intent(ctx,Attendee_account.class);
+            Intent i = new Intent(this,Attendee_account.class);
             startActivity(i);
+            finish();
         }
         return super.onKeyDown(keyCode, event);
     }

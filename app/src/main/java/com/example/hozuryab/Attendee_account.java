@@ -103,6 +103,7 @@ public class Attendee_account extends AppCompatActivity {
                 case R.id.nav_attendee_account:
                     Intent i1 = new Intent(ctx,Attendee_profile.class);
                     startActivity(i1);
+                    finish();
                     return true;
                 case R.id.nav_attendee_contact:
                     Intent intent2 = new Intent(Intent.ACTION_SENDTO);
@@ -111,11 +112,13 @@ public class Attendee_account extends AppCompatActivity {
                     intent2.putExtra(Intent.EXTRA_SUBJECT, "Your subject here...");
                     intent2.putExtra(Intent.EXTRA_TEXT,"Your message here...");
                     startActivity(intent2);
+                    finish();
                     return true;
 
                 case R.id.nav_attendee_logout:
                     Intent intent = new Intent(ctx,MainActivity.class);
                     startActivity(intent);
+                    finish();
                     return true;
             }
             return false;
@@ -188,12 +191,13 @@ public class Attendee_account extends AppCompatActivity {
             return res;
         }
     }
-//    @Override
-//    public boolean onKeyDown(int keyCode, KeyEvent event) {
-//        if (keyCode == KeyEvent.KEYCODE_BACK) {
-//            Intent i = new Intent(ctx,MainActivity.class);
-//            startActivity(i);
-//        }
-//        return super.onKeyDown(keyCode, event);
-//    }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            Intent i = new Intent(ctx,MainActivity.class);
+            startActivity(i);
+            finish();
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 }

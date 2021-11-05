@@ -28,7 +28,6 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="title_activity_attendee_account">Attendee_account</string>
-
     <string name="edit">ویرایش</string>
     <string name="nav_open">Open</string>
     <string name="nav_close">Close</string>
@@ -48,5 +47,9 @@
     <string name="sessions_list">لیست جلسات</string>
     <string name="status">وضعیت</string>
     <string name="todo">todo</string>
+    <string name="edate">تاریخ پایان</string>
+    <string name="stime">ساعت شروع</string>
+    <string name="sdate">تاریخ شروع</string>
+    <string name="etime">ساعت پایان</string>
     <string name="sessionsList">لیست حضورغیاب شما در این کلاس</string>
 </resources>

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     tools:context=".MainActivity"
     android:background="@drawable/round_background">
 
@@ -16,6 +17,7 @@
         android:minHeight="48dp"
         android:paddingLeft="8dp"
         android:paddingRight="8dp"
+        android:gravity="center"
         android:background="@drawable/round_textview"
         android:hint="@string/username"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
@@ -31,6 +33,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/password"
+        android:gravity="center"
         android:background="@drawable/round_textview"
         android:inputType="textPassword"
         android:minHeight="48dp"
