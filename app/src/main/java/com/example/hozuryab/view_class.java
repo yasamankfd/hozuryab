@@ -28,7 +28,7 @@ public class view_class extends AppCompatActivity {
     String[] sessions_list;
     TextView id , title , st , et , sd,ed ,place;
     GridView sessions;
-    Button new_session , attendees_list , add_attendee,add_controller;
+    Button new_session , attendees_list , add_attendee,add_controller,show_cons;
 
     Bundle b;
     String Id;
@@ -51,6 +51,14 @@ public class view_class extends AppCompatActivity {
         attendees_list = findViewById(R.id.attendees_list);
         add_attendee = findViewById(R.id.add_attendees);
         add_controller = findViewById(R.id.add_controller);
+        show_cons = findViewById(R.id.show_controllers);
+
+        show_cons.setOnClickListener(view -> {
+
+            Intent i = new Intent(this,Show_controllers_for_controller.class);
+            i.putExtra("classid",Id);
+            startActivity(i);
+        });
 
         add_controller.setOnClickListener(view -> {
             Intent i = new Intent(view_class.this,Add_controller_to_class.class);

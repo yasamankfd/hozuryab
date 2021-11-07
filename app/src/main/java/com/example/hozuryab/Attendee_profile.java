@@ -71,18 +71,18 @@ public class Attendee_profile extends AppCompatActivity {
         setContentView(R.layout.activity_attendee_profile);
 
         edit = findViewById(R.id.attendee_editinfo);
-        choose = findViewById(R.id.uploadpic);
+        //choose = findViewById(R.id.uploadpic);
         uname = findViewById(R.id.attende_profile_uname);
         name = findViewById(R.id.attende_profile_name);
         lname = findViewById(R.id.attende_profile_lname);
         phone = findViewById(R.id.attende_profile_phone);
-        y = findViewById(R.id.attende_profile_bdate_year);
+        y = findViewById(R.id.attende_profile_bdate_yearr);
         m = findViewById(R.id.attende_profile_bdate_month);
         d = findViewById(R.id.attende_profile_bdate_day);
         yy = findViewById(R.id.attendee_year);
         mm = findViewById(R.id.attendee_month);
         dd = findViewById(R.id.attendee_day);
-        profilepic = findViewById(R.id.attende_profile_image);
+        //profilepic = findViewById(R.id.attende_profile_image);
         item = findViewById(R.id.nav_attendee_account);
 
         uname.setEnabled(false);
@@ -93,7 +93,7 @@ public class Attendee_profile extends AppCompatActivity {
             {
                 Toast.makeText(getApplication(),"لطفا تمام فیلد ها را پر کنید !",Toast.LENGTH_SHORT).show();
             }else {
-                String birthdate = (Integer.parseInt(y.getSelectedItem().toString()) + 621) + "-" + m.getSelectedItem().toString() + "-" + d.getSelectedItem().toString();
+                String birthdate = y.getSelectedItem().toString() + "-" + m.getSelectedItem().toString() + "-" + d.getSelectedItem().toString();
                 edit_profile e = new edit_profile(ctx,name.getText().toString(),lname.getText().toString(),birthdate,phone.getText().toString(),uname.getText().toString());
                 e.execute();
 
@@ -113,16 +113,16 @@ public class Attendee_profile extends AppCompatActivity {
 
         });
 
-        choose.setOnClickListener(view -> {
-            Intent i  = new Intent(Intent.ACTION_PICK,MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-            i.setType("image/*");
-
-            getFileUri();
-            i.putExtra(MediaStore.EXTRA_OUTPUT,file_uri);
-            profilepic.setImageBitmap(bitmap);
-            startActivityForResult(i,10);
-
-        });
+//        choose.setOnClickListener(view -> {
+//            Intent i  = new Intent(Intent.ACTION_PICK,MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+//            i.setType("image/*");
+//
+//            getFileUri();
+//            i.putExtra(MediaStore.EXTRA_OUTPUT,file_uri);
+//            profilepic.setImageBitmap(bitmap);
+//            startActivityForResult(i,10);
+//
+//        });
 
         ArrayList<String> arrayList1 = new ArrayList<>();
         ArrayList<String> arrayList2 = new ArrayList<>();
@@ -153,10 +153,10 @@ public class Attendee_profile extends AppCompatActivity {
         ArrayAdapter<String> arrayAdapter1 = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item ,arrayList2);
         arrayAdapter1.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         d.setAdapter(arrayAdapter1);
-        ArrayAdapter<String> arrayAdapter2 = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item ,arrayList3);
+        ArrayAdapter<String> arrayAdapter2 = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item ,arrayList1);
         arrayAdapter2.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         m.setAdapter(arrayAdapter2);
-        ArrayAdapter<String> arrayAdapter3 = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item ,arrayList1);
+        ArrayAdapter<String> arrayAdapter3 = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item ,arrayList3);
         arrayAdapter3.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         y.setAdapter(arrayAdapter3);
 
@@ -257,6 +257,7 @@ public class Attendee_profile extends AppCompatActivity {
             try {
                 String data = "name=" + URLEncoder.encode(name, "UTF-8")
                         + "&" + "date=" + date + "&" + "lname=" + lname  + "&" + "phone=" + phone+ "&" + "id=" + uname;
+                System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&"+data);
                 URL url = new URL(Edit_URL);
 
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();

@@ -78,31 +78,36 @@ public class Show_attendee_for_controller extends AppCompatActivity {
             result = getSessions.get().toString();
             System.out.println("777777777777777777777777777777777777777777777777777777777777->"+result);
         }catch (Exception e){e.printStackTrace();}
+
         String[] splited_raw_data = result.split("_");
-        int i = 2 , j = 4 , l = splited_raw_data.length/5;
-        String rawDate ="" ,rawStatus="" ;
-        for (int k=0;k<l;k++)
+        if(splited_raw_data.length>1)
         {
-            rawDate +=splited_raw_data[i];
-            i+=5;
-            rawStatus+=splited_raw_data[j];
-            j+=5;
-
-
-            if(l-k>1)
+            int i = 2 , j = 4 , l = splited_raw_data.length/5;
+            String rawDate ="" ,rawStatus="" ;
+            for (int k=0;k<l;k++)
             {
-                rawDate +="_";
+                rawDate +=splited_raw_data[i];
+                i+=5;
+                rawStatus+=splited_raw_data[j];
+                j+=5;
 
-                rawStatus+="_";
+
+                if(l-k>1)
+                {
+                    rawDate +="_";
+
+                    rawStatus+="_";
+                }
             }
-        }
-        dates = rawDate.split("_");
-        statuses = rawStatus.split("_");
+            dates = rawDate.split("_");
+            statuses = rawStatus.split("_");
 
-        Show_ab_for_attendee_adapter show_ab_for_attendee_adapter = new Show_ab_for_attendee_adapter(dates,statuses,Show_attendee_for_controller.this);
-        grid.setAdapter(show_ab_for_attendee_adapter);
-        grid.setNumColumns(1);
-        grid.setHorizontalSpacing(5);
+            Show_ab_for_attendee_adapter show_ab_for_attendee_adapter = new Show_ab_for_attendee_adapter(dates,statuses,Show_attendee_for_controller.this);
+            grid.setAdapter(show_ab_for_attendee_adapter);
+            grid.setNumColumns(1);
+            grid.setHorizontalSpacing(5);
+        }
+
 
     }
 

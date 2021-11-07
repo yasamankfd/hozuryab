@@ -9,53 +9,9 @@
 
 
     <TextView
-        android:id="@+id/controller_view_uname"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginBottom="27dp"
-        android:background="@drawable/round_textview"
-        android:ems="10"
-        android:gravity="center"
-        android:hint=""
-        android:inputType="textPersonName"
-        android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/controller_view_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/controller_profilepic" />
-
-    <TextView
-        android:id="@+id/controller_view_name"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginBottom="29dp"
-        android:background="@drawable/round_textview"
-        android:ems="10"
-        android:gravity="center"
-        android:inputType="textPersonName"
-        android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/controller_view_lname"
-        app:layout_constraintStart_toStartOf="@+id/controller_view_uname"
-        app:layout_constraintTop_toBottomOf="@+id/controller_view_uname" />
-
-    <TextView
-        android:id="@+id/controller_view_email"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginBottom="161dp"
-        android:background="@drawable/round_textview"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text=""
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/controller_view_lname"
-        app:layout_constraintTop_toBottomOf="@+id/controller_view_lname" />
-
-    <TextView
         android:id="@+id/controller_view_lname"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="0dp"
         android:layout_marginBottom="27dp"
         android:background="@drawable/round_textview"
         android:ems="10"
@@ -67,15 +23,49 @@
         app:layout_constraintStart_toStartOf="@+id/controller_view_name"
         app:layout_constraintTop_toBottomOf="@+id/controller_view_name" />
 
-    <ImageView
-        android:id="@+id/controller_profilepic"
-        android:layout_width="156dp"
+    <TextView
+        android:id="@+id/controller_view_email"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginTop="43dp"
-        android:layout_marginBottom="64dp"
+        android:layout_marginBottom="255dp"
         android:background="@drawable/round_textview"
-        app:layout_constraintBottom_toTopOf="@+id/controller_view_uname"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/controller_view_lname"
+        app:layout_constraintTop_toBottomOf="@+id/controller_view_lname" />
+
+    <TextView
+        android:id="@+id/controller_view_name"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/round_textview"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/controller_view_lname"
+        app:layout_constraintStart_toStartOf="@+id/controller_view_uname"
+        app:layout_constraintTop_toBottomOf="@+id/controller_view_uname" />
+
+    <TextView
+        android:id="@+id/controller_view_uname"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="194dp"
+        android:layout_marginBottom="27dp"
+        android:background="@drawable/round_textview"
+        android:ems="10"
+        android:gravity="center"
+        android:hint=""
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/controller_view_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

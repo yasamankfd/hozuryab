@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Hozuryab"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Show_controllers_for_controller"
+            android:exported="false" />
+        <activity
             android:name=".Add_controller_to_class"
             android:exported="false" />
         <activity

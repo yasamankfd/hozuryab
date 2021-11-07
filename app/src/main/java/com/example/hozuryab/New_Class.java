@@ -81,6 +81,7 @@ public class New_Class extends AppCompatActivity {
                             startActivity(i);
 
                             Toast.makeText(getApplication(), "کلاس با موفقیت ثبت شد !", Toast.LENGTH_SHORT).show();
+                            finish();
                         } else Toast.makeText(getApplication(), "مشکلی پیش امد دوباره امتحان کنید !", Toast.LENGTH_SHORT).show();
 
                     } catch (ExecutionException e) {

@@ -4,96 +4,85 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Controller_profile"
-    android:background="@drawable/round_background">
-
-  <EditText
-      android:id="@+id/controller_profile_uname"
-      android:layout_width="wrap_content"
-      android:layout_height="50dp"
-      android:ems="10"
-      android:inputType="textPersonName"
-      android:text=""
-      android:hint=""
-      android:gravity="center"
-      android:paddingLeft="7dp"
-      app:layout_constraintBottom_toTopOf="@+id/controller_profile_name"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.502"
-      app:layout_constraintStart_toStartOf="parent"
-      android:background="@drawable/round_textview"
-      app:layout_constraintTop_toBottomOf="@+id/controller_profilepic" />
-
-  <EditText
-      android:id="@+id/controller_profile_name"
-      android:layout_width="wrap_content"
-      android:layout_height="50dp"
-      android:ems="10"
-      android:inputType="textPersonName"
-      android:text=""
-      android:paddingRight="10dp"
-      android:paddingLeft="7dp"
-      android:background="@drawable/round_textview"
-      app:layout_constraintBottom_toTopOf="@+id/controller_profile_lname"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.5"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/controller_profile_uname" />
-
-  <EditText
-      android:id="@+id/controller_profile_email"
-      android:layout_width="240dp"
-      android:layout_height="50dp"
-      android:ems="10"
-      android:inputType="textPersonName"
-      android:text=""
-      android:gravity="center"
-      android:paddingRight="7dp"
-      android:paddingLeft="7dp"
-      android:background="@drawable/round_textview"
-      app:layout_constraintBottom_toTopOf="@+id/controller_profile_edit"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.5"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/controller_profile_lname" />
+    android:background="@drawable/round_background"
+    tools:context=".Controller_profile">
 
   <EditText
       android:id="@+id/controller_profile_lname"
       android:layout_width="wrap_content"
       android:layout_height="50dp"
+      android:layout_marginBottom="48dp"
+      android:background="@drawable/round_textview"
+      android:ems="10"
+      android:hint=""
+      android:inputType="textPersonName"
+      android:paddingLeft="7dp"
+      android:paddingRight="10dp"
+      android:text=""
+      app:layout_constraintBottom_toTopOf="@+id/controller_profile_email"
+      app:layout_constraintStart_toStartOf="@+id/controller_profile_name"
+      app:layout_constraintTop_toBottomOf="@+id/controller_profile_name" />
+
+  <EditText
+      android:id="@+id/controller_profile_name"
+      android:layout_width="wrap_content"
+      android:layout_height="50dp"
+      android:layout_marginBottom="48dp"
+      android:background="@drawable/round_textview"
       android:ems="10"
       android:inputType="textPersonName"
-      android:text=""
-      android:paddingRight="10dp"
       android:paddingLeft="7dp"
-      android:hint=""
+      android:paddingRight="10dp"
+      android:text=""
+      app:layout_constraintBottom_toTopOf="@+id/controller_profile_lname"
+      app:layout_constraintStart_toStartOf="@+id/controller_profile_uname"
+      app:layout_constraintTop_toBottomOf="@+id/controller_profile_uname" />
+
+  <EditText
+      android:id="@+id/controller_profile_uname"
+      android:layout_width="wrap_content"
+      android:layout_height="50dp"
+      android:layout_marginTop="131dp"
+      android:layout_marginBottom="47dp"
       android:background="@drawable/round_textview"
-      app:layout_constraintBottom_toTopOf="@+id/controller_profile_email"
+      android:ems="10"
+      android:gravity="center"
+      android:hint=""
+      android:inputType="textPersonName"
+      android:paddingLeft="7dp"
+      android:text=""
+      app:layout_constraintBottom_toTopOf="@+id/controller_profile_name"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.5"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/controller_profile_name" />
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <EditText
+      android:id="@+id/controller_profile_email"
+      android:layout_width="240dp"
+      android:layout_height="50dp"
+      android:layout_marginBottom="47dp"
+      android:background="@drawable/round_textview"
+      android:ems="10"
+      android:gravity="center"
+      android:inputType="textPersonName"
+      android:paddingLeft="7dp"
+      android:paddingRight="7dp"
+      android:text=""
+      app:layout_constraintBottom_toTopOf="@+id/controller_profile_edit"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/controller_profile_lname" />
 
   <Button
       android:id="@+id/controller_profile_edit"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="@string/edit"
+      android:layout_marginBottom="162dp"
       android:background="@drawable/round_textview"
+      android:text="@string/edit"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.5"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/controller_profile_email" />
 
-  <ImageView
-      android:id="@+id/controller_profilepic"
-      android:layout_width="156dp"
-      android:layout_height="149dp"
-      app:layout_constraintBottom_toTopOf="@+id/controller_profile_uname"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.5"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      android:background="@drawable/round_textview"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

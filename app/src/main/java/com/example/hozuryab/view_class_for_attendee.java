@@ -86,6 +86,7 @@ public class view_class_for_attendee extends AppCompatActivity {
         String rawId = "",rawName = "";
         for(int k =0 ; k<len ; k++)
         {
+            System.out.println("TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT");
             rawId+=raw_attendees_data[i]+"_";
             i+=5;
             rawName+=raw_attendees_data[j]+"_";
